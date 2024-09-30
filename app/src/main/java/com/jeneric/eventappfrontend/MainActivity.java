@@ -27,7 +27,21 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        replaceFragment(new HomeFragment());
 
+        binding.bottomNavigationView.setOnItemSelectedListener(item -> {
+            if (item.getItemId() == R.id.menu_home) {
+                replaceFragment(new HomeFragment());
+            } else if (item.getItemId() == R.id.menu_search) {
+                replaceFragment(new ExploreFragment());
+            } else if (item.getItemId() == R.id.menu_add) {
+                replaceFragment(new CreateFragment());
+            } else if (item.getItemId() == R.id.menu_settings) {
+                replaceFragment(new SettingsFragment());
+            }
+
+            return true;
+        });
     }
     private void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
