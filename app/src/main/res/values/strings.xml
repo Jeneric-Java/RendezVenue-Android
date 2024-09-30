@@ -5,4 +5,6 @@
     <string name="create_event_text">Create Event</string>
     <string name="settings_text">Settings</string>
     <string name="calendar_fab">Calendar FAB</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
