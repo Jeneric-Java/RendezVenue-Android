@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <data>
+        <variable
+            name="clickHandler"
+            type="com.jeneric.eventappfrontend.ui.home.HomeClickHandlers" />
+    </data>
+
+<FrameLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
@@ -22,6 +30,8 @@
 
         app:icon="@drawable/calendar_month_icon"
         app:iconSize="20dp"
-        app:iconTint="@color/black" />
+        app:iconTint="@color/black"
+        android:onClick="@{clickHandler::onCalFABClicked}"/>
 
 </FrameLayout>
+</layout>
