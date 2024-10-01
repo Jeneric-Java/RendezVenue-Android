@@ -1,16 +1,13 @@
-package com.jeneric.eventappfrontend;
+package com.jeneric.eventappfrontend.ui.main;
 
 import android.os.Bundle;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.jeneric.eventappfrontend.R;
 import com.jeneric.eventappfrontend.databinding.ActivityMainBinding;
 import com.jeneric.eventappfrontend.ui.create.CreateFragment;
 import com.jeneric.eventappfrontend.ui.explore.ExploreFragment;
@@ -28,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         replaceFragment(new HomeFragment());
+
+        binding.setClickHandler(new MainActivityClickHandlers(this));
 
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
             if (item.getItemId() == R.id.menu_home) {
