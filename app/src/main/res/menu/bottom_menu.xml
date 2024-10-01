@@ -2,11 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/menu_search"
-        android:title="@string/search_text"
-        android:icon="@drawable/search_icon" />
-
-    <item
         android:id="@+id/menu_home"
         android:title="@string/home_text"
         android:icon="@drawable/home_icon" />
@@ -15,5 +10,11 @@
         android:id="@+id/menu_add"
         android:title="@string/create_event_text"
         android:icon="@drawable/add_icon" />
+
+    <item
+        android:id="@+id/menu_search"
+        android:title="@string/search_text"
+        android:icon="@drawable/search_icon" />
+
 
 </menu>
