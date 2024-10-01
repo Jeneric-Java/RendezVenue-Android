@@ -47,7 +47,8 @@
         android:src="@drawable/calendar_month_icon"
         app:layout_anchor="@id/bottomAppBar"
         android:clickable="true"
-        android:focusable="true" />
+        android:focusable="true"
+        android:onClick="@{clickHandler::onCalFABClicked}"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
