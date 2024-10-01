@@ -4,11 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" >
     
-    <data>
-        <variable
-            name="clickHandler"
-            type="com.jeneric.eventappfrontend.ui.main.MainActivityClickHandlers" />
-    </data>
+
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     
     android:id="@+id/main"
