@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
 
         replaceFragment(new HomeFragment());
 
-        binding.setClickHandler(new MainActivityClickHandlers(this));
 
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
             if (item.getItemId() == R.id.menu_home) {
@@ -35,8 +34,6 @@ public class MainActivity extends AppCompatActivity {
                 replaceFragment(new ExploreFragment());
             } else if (item.getItemId() == R.id.menu_add) {
                 replaceFragment(new CreateFragment());
-            } else if (item.getItemId() == R.id.menu_settings) {
-                replaceFragment(new SettingsFragment());
             }
 
             return true;
