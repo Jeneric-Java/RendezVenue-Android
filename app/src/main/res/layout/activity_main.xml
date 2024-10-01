@@ -40,15 +40,7 @@
 
     </com.google.android.material.bottomappbar.BottomAppBar>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/calendar_fab"
-        android:src="@drawable/calendar_month_icon"
-        app:layout_anchor="@id/bottomAppBar"
-        android:clickable="true"
-        android:focusable="true"
-        android:onClick="@{clickHandler::onCalFABClicked}"/>
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
