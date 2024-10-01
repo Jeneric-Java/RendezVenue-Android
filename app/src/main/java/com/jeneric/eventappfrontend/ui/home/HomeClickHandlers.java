@@ -1,4 +1,4 @@
-package com.jeneric.eventappfrontend.ui.main;
+package com.jeneric.eventappfrontend.ui.home;
 
 import android.content.ContentUris;
 import android.content.Context;
@@ -7,11 +7,11 @@ import android.net.Uri;
 import android.provider.CalendarContract;
 import android.view.View;
 
-public class MainActivityClickHandlers {
+public class HomeClickHandlers {
 
     Context context;
 
-    public MainActivityClickHandlers(Context context) {
+    public HomeClickHandlers(Context context) {
         this.context = context;
     }
 
