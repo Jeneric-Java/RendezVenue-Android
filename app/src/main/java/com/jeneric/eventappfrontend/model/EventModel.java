@@ -10,7 +10,6 @@ import androidx.databinding.Bindable;
 import com.google.gson.annotations.SerializedName;
 import com.jeneric.eventappfrontend.BR;
 
-import java.sql.Time;
 
 public class EventModel extends BaseObservable implements Parcelable {
 
@@ -27,11 +26,11 @@ public class EventModel extends BaseObservable implements Parcelable {
     @SerializedName("eventType")
     private String eventType;
     @SerializedName("startTime")
-    private Time startTime;
+    private TimeModel startTime;
     @SerializedName("endTime")
-    private Time endTime;
+    private TimeModel endTime;
 
-    public EventModel(Long id, String eventTitle, String eventDescription, String eventLocation, String eventURL, String eventType, Time startTime, Time endTime) {
+    public EventModel(Long id, String eventTitle, String eventDescription, String eventLocation, String eventURL, String eventType, TimeModel startTime, TimeModel endTime) {
         this.id = id;
         this.eventTitle = eventTitle;
         this.eventDescription = eventDescription;
@@ -52,8 +51,8 @@ public class EventModel extends BaseObservable implements Parcelable {
         eventLocation = in.readString();
         eventURL = in.readString();
         eventType = in.readString();
-        startTime = in.readParcelable(Time.class.getClassLoader());
-        endTime = in.readParcelable(Time.class.getClassLoader());
+        startTime = in.readParcelable(TimeModel.class.getClassLoader());
+        endTime = in.readParcelable(TimeModel.class.getClassLoader());
     }
 
     public static final Creator<EventModel> CREATOR = new Creator<EventModel>() {
@@ -128,21 +127,21 @@ public class EventModel extends BaseObservable implements Parcelable {
     }
 
     @Bindable
-    public Time getStartTime() {
+    public TimeModel getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Time startTime) {
+    public void setStartTime(TimeModel startTime) {
         this.startTime = startTime;
         notifyPropertyChanged(BR.startTime);
     }
 
     @Bindable
-    public Time getEndTime() {
+    public TimeModel getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Time endTime) {
+    public void setEndTime(TimeModel endTime) {
         this.endTime = endTime;
         notifyPropertyChanged(BR.endTime);
     }
@@ -154,6 +153,7 @@ public class EventModel extends BaseObservable implements Parcelable {
 
     @Override
     public void writeToParcel(@NonNull Parcel dest, int flags) {
+        dest.writeLong(id);
         dest.writeString(eventTitle);
         dest.writeString(eventDescription);
         dest.writeString(eventLocation);
