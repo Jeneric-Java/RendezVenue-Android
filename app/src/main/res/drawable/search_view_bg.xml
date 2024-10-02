@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background with corners -->
+    <item>
+        <shape>
+            <corners android:radius="12dp"/>
+            <solid android:color="#EDE1E3"/>
+        </shape>
+    </item>
+
+    <!-- Bottom shadow -->
+    <item>
+        <shape>
+            <corners android:radius="12dp"/>
+            <gradient
+                android:startColor="#44CBC4C4"
+                android:endColor="#00000000"
+                android:angle="90" />
+        </shape>
+    </item>
+</layer-list>
