@@ -15,6 +15,9 @@
         <action
             android:id="@+id/action_homeFragment_to_exploreFragment"
             app:destination="@id/exploreFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/createFragment"
@@ -25,5 +28,18 @@
         android:id="@+id/exploreFragment"
         android:name="com.jeneric.eventappfrontend.ui.explore.ExploreFragment"
         android:label="fragment_explore"
-        tools:layout="@layout/fragment_explore" />
+        tools:layout="@layout/fragment_explore" >
+        <action
+            android:id="@+id/action_exploreFragment_to_eventDetailsFragment2"
+            app:destination="@id/eventDetailsFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.jeneric.eventappfrontend.ui.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/eventDetailsFragment2"
+        android:name="com.jeneric.eventappfrontend.ui.eventdetails.EventDetailsFragment"
+        android:label="EventDetailsFragment" />
 </navigation>
