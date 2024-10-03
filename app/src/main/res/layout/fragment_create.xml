@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:text="Event Name"
+        android:hint="Event Name"
         tools:layout_editor_absoluteX="102dp"
         tools:layout_editor_absoluteY="97dp"
         app:layout_constraintTop_toBottomOf="@id/create_header"
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textMultiLine"
-        android:text="Event Description"
+        android:hint="Event Description"
         tools:layout_editor_absoluteX="102dp"
         tools:layout_editor_absoluteY="97dp"
         app:layout_constraintTop_toBottomOf="@id/editTitleText"
@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:text="Location"
+        android:hint="Location"
         tools:layout_editor_absoluteX="102dp"
         tools:layout_editor_absoluteY="97dp"
         app:layout_constraintTop_toBottomOf="@id/editDescriptionText"
@@ -88,7 +88,7 @@
         app:layout_constraintTop_toBottomOf="@id/spinner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="Date"
+        android:hint="Date"
         android:focusable="false"
         android:cursorVisible="false"
         android:onClick="@{clickHandler::onDateFieldClicked}"
@@ -104,7 +104,7 @@
         app:layout_constraintTop_toBottomOf="@id/editTextDate"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="Start Time"
+        android:hint="Start Time"
         android:clickable="false"
         android:focusable="false"
         android:cursorVisible="false"
@@ -121,7 +121,7 @@
         app:layout_constraintTop_toBottomOf="@id/editTextStartTime"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="End Time"/>
+        android:hint="End Time"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
