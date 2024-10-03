@@ -6,6 +6,9 @@
         <variable
             name="clickHandler"
             type="com.jeneric.eventappfrontend.ui.create.CreateFragmentClickHandlers" />
+        <variable
+            name="event"
+            type="com.jeneric.eventappfrontend.model.EventModel" />
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
@@ -37,7 +40,8 @@
         app:layout_constraintTop_toBottomOf="@id/create_header"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:text="@={event.eventTitle}" />
 
     <EditText
         android:id="@+id/editDescriptionText"
@@ -51,7 +55,8 @@
         app:layout_constraintTop_toBottomOf="@id/editTitleText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:text="@={event.eventDescription}" />
 
     <EditText
         android:id="@+id/editLocationText"
@@ -65,7 +70,8 @@
         app:layout_constraintTop_toBottomOf="@id/editDescriptionText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:text="@={event.eventLocation}" />
 
     <Spinner
         android:id="@+id/spinner"
