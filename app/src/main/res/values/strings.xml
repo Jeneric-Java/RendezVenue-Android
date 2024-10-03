@@ -15,4 +15,12 @@
     <string name="location">Location</string>
     <string name="event_description">Event Description</string>
     <string name="event_name">Event Name</string>
+
+    <string-array name="event_type_list">
+        <item>Arts &amp; Theatre</item>
+        <item>Miscellaneous</item>
+        <item>Sports</item>
+        <item>Music</item>
+        <item>Film</item>
+    </string-array>
 </resources>
