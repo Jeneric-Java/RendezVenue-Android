@@ -20,10 +20,18 @@
         android:id="@+id/createFragment"
         android:name="com.jeneric.eventappfrontend.ui.create.CreateFragment"
         android:label="fragment_create"
-        tools:layout="@layout/fragment_create" />
+        tools:layout="@layout/fragment_create" >
+        <action
+            android:id="@+id/action_createFragment_to_timePickerFragment"
+            app:destination="@id/timePickerFragment" />
+    </fragment>
     <fragment
         android:id="@+id/exploreFragment"
         android:name="com.jeneric.eventappfrontend.ui.explore.ExploreFragment"
         android:label="fragment_explore"
         tools:layout="@layout/fragment_explore" />
+    <dialog
+        android:id="@+id/timePickerFragment"
+        android:name="com.jeneric.eventappfrontend.ui.create.dialogues.TimePickerFragment"
+        android:label="TimePickerFragment" />
 </navigation>
