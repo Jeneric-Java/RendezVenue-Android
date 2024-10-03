@@ -28,7 +28,7 @@
     <EditText
         android:id="@+id/editTitleText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:ems="10"
         android:inputType="text"
         android:hint="@string/event_name"
@@ -42,7 +42,7 @@
     <EditText
         android:id="@+id/editDescriptionText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:ems="10"
         android:inputType="textMultiLine"
         android:hint="@string/event_description"
@@ -56,7 +56,7 @@
     <EditText
         android:id="@+id/editLocationText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:ems="10"
         android:inputType="text"
         android:hint="@string/location"
@@ -70,7 +70,7 @@
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="286dp"
         app:layout_constraintTop_toBottomOf="@id/editLocationText"
@@ -82,7 +82,7 @@
     <EditText
         android:id="@+id/editTextDate"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:ems="10"
         tools:layout_editor_absoluteX="105dp"
         tools:layout_editor_absoluteY="455dp"
@@ -99,7 +99,7 @@
     <EditText
         android:id="@+id/editTextStartTime"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:ems="10"
         tools:layout_editor_absoluteX="28dp"
         tools:layout_editor_absoluteY="319dp"
@@ -117,7 +117,7 @@
     <EditText
         android:id="@+id/editTextEndTime"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:ems="10"
         tools:layout_editor_absoluteX="28dp"
         tools:layout_editor_absoluteY="319dp"
