@@ -17,7 +17,7 @@
         android:id="@+id/create_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CREATE FRAGMENT"
+        android:text="@string/create_event_text"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:hint="Event Name"
+        android:hint="@string/event_name"
         tools:layout_editor_absoluteX="102dp"
         tools:layout_editor_absoluteY="97dp"
         app:layout_constraintTop_toBottomOf="@id/create_header"
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textMultiLine"
-        android:hint="Event Description"
+        android:hint="@string/event_description"
         tools:layout_editor_absoluteX="102dp"
         tools:layout_editor_absoluteY="97dp"
         app:layout_constraintTop_toBottomOf="@id/editTitleText"
@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:hint="Location"
+        android:hint="@string/location"
         tools:layout_editor_absoluteX="102dp"
         tools:layout_editor_absoluteY="97dp"
         app:layout_constraintTop_toBottomOf="@id/editDescriptionText"
@@ -88,7 +88,7 @@
         app:layout_constraintTop_toBottomOf="@id/spinner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:hint="Date"
+        android:hint="@string/date"
         android:focusable="false"
         android:cursorVisible="false"
         android:onClick="@{clickHandler::onDateFieldClicked}"
@@ -104,7 +104,7 @@
         app:layout_constraintTop_toBottomOf="@id/editTextDate"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:hint="Start Time"
+        android:hint="@string/start_time"
         android:clickable="false"
         android:focusable="false"
         android:cursorVisible="false"
@@ -121,7 +121,7 @@
         app:layout_constraintTop_toBottomOf="@id/editTextStartTime"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:hint="End Time"/>
+        android:hint="@string/end_time"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
