@@ -21,6 +21,7 @@ import com.jeneric.eventappfrontend.ui.settings.SettingsFragment;
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
+    MainActivityClickHandlers mainActivityClickHandlers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,25 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
 
-//        replaceFragment(new HomeFragment());
+        mainActivityClickHandlers = new MainActivityClickHandlers(this);
+        binding.setClickHandler(mainActivityClickHandlers);
 
-
-//        binding.bottomNavigationView.setOnItemSelectedListener(item -> {
-//            if (item.getItemId() == R.id.menu_home) {
-//                replaceFragment(new HomeFragment());
-//            } else if (item.getItemId() == R.id.menu_search) {
-//                replaceFragment(new ExploreFragment());
-//            } else if (item.getItemId() == R.id.menu_add) {
-//                replaceFragment(new CreateFragment());
-//            }
-//
-//            return true;
-//        });
     }
-//    private void replaceFragment(Fragment fragment) {
-//        FragmentManager fragmentManager = getSupportFragmentManager();
-//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//        fragmentTransaction.replace(R.id.frame_layout, fragment);
-//        fragmentTransaction.commit();
-//    }
 }
