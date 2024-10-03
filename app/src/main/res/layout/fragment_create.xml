@@ -127,6 +127,18 @@
         android:layout_marginTop="10dp"
         android:hint="@string/end_time"/>
 
+    <Button
+        android:id="@+id/create_event_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/create_event_text"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="507dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="80dp"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
