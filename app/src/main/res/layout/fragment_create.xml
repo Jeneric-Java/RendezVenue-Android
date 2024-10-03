@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:textSize="20sp"
         />
 
@@ -51,7 +51,7 @@
         app:layout_constraintTop_toBottomOf="@id/editTitleText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="10dp"/>
 
     <EditText
         android:id="@+id/editLocationText"
@@ -65,7 +65,7 @@
         app:layout_constraintTop_toBottomOf="@id/editDescriptionText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="10dp"/>
 
     <Spinner
         android:id="@+id/spinner"
@@ -76,7 +76,7 @@
         app:layout_constraintTop_toBottomOf="@id/editLocationText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="10dp"/>
 
     <EditText
         android:id="@+id/editTextDate"
@@ -88,6 +88,7 @@
         app:layout_constraintTop_toBottomOf="@id/spinner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
         android:hint="@string/date"
         android:focusable="false"
         android:cursorVisible="false"
@@ -104,6 +105,7 @@
         app:layout_constraintTop_toBottomOf="@id/editTextDate"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
         android:hint="@string/start_time"
         android:clickable="false"
         android:focusable="false"
@@ -121,6 +123,7 @@
         app:layout_constraintTop_toBottomOf="@id/editTextStartTime"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
         android:hint="@string/end_time"/>
 
 
