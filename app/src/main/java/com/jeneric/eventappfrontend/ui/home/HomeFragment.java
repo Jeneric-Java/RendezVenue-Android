@@ -40,8 +40,8 @@ public class HomeFragment extends Fragment {
 
         return binding.getRoot();
     }
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        binding.setClickHandler(new HomeClickHandlers(context));
-    }
+//    @Override
+//    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+//        binding.setClickHandler(new HomeClickHandlers(context));
+//    }
 }
