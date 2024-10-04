@@ -46,6 +46,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginStart="45dp"
+            style="@style/icon_style"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="342dp"
             android:src="@drawable/map_marker_24_black"
@@ -69,6 +70,8 @@
         <ImageView
             android:id="@+id/eventdetails_briefcase_icon"
             android:layout_width="24dp"
+            style="@style/icon_style"
+
             android:layout_height="24dp"
             android:layout_marginStart="45dp"
             android:layout_marginTop="16dp"
@@ -93,6 +96,7 @@
 
         <ImageView
             android:id="@+id/eventdetails_calendar_icon"
+            style="@style/icon_style"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginStart="45dp"

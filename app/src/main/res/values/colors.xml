@@ -16,4 +16,6 @@
     <color name="teagreen">#c7f9cc</color>
     <color name="delftBlue">#1a2f60</color>
     <color name="tangBlue">#355ec0</color>
+    <color name="grey">#6A6A6A</color>
+    <color name="frenchGrey">#c7bcc7</color>
 </resources>
