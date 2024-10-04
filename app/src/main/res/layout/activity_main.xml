@@ -22,7 +22,8 @@
             android:id="@+id/TopAppBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#4F61C4"
+            android:background="@color/marianBlue"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -33,20 +34,20 @@
             <ImageView
                 android:layout_width="28dp"
                 android:layout_height="28dp"
-                android:src="@drawable/calendar_month_icon"
                 android:layout_gravity="end"
                 android:layout_marginEnd="40dp"
+                style="@style/appbar_calendar_style"
                 android:onClick="@{clickHandler::onCalFABClicked}"
-                app:tint="@color/white" />
+                android:src="@drawable/calendar_month_icon" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="@font/manrope_medium"
                 android:text="@string/AppName"
-                android:textColor="@color/white"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                tools:layout_editor_absoluteX="141dp"
+                tools:layout_editor_absoluteY="17dp" />
 
         </androidx.appcompat.widget.Toolbar>
 
@@ -65,9 +66,8 @@
             android:id="@+id/bottomNavigationView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#4F61C4"
-            app:itemIconTint="@color/white"
-            app:itemTextColor="@color/white"
+            style="@style/navBar_style"
+            app:itemActiveIndicatorStyle="@android:color/transparent"
             app:labelVisibilityMode="labeled"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
