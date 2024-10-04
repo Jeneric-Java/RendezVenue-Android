@@ -23,7 +23,14 @@
         android:id="@+id/createFragment"
         android:name="com.jeneric.eventappfrontend.ui.create.CreateFragment"
         android:label="fragment_create"
-        tools:layout="@layout/fragment_create" />
+        tools:layout="@layout/fragment_create" >
+        <action
+            android:id="@+id/action_createFragment_to_timePickerFragment"
+            app:destination="@id/timePickerFragment" />
+        <action
+            android:id="@+id/action_createFragment_to_datePickerFragment"
+            app:destination="@id/datePickerFragment" />
+    </fragment>
     <fragment
         android:id="@+id/exploreFragment"
         android:name="com.jeneric.eventappfrontend.ui.explore.ExploreFragment"
@@ -42,4 +49,13 @@
         android:id="@+id/eventDetailsFragment2"
         android:name="com.jeneric.eventappfrontend.ui.eventdetails.EventDetailsFragment"
         android:label="EventDetailsFragment" />
+        tools:layout="@layout/fragment_explore" />
+    <dialog
+        android:id="@+id/timePickerFragment"
+        android:name="com.jeneric.eventappfrontend.ui.create.dialogues.TimePickerFragment"
+        android:label="TimePickerFragment" />
+    <dialog
+        android:id="@+id/datePickerFragment"
+        android:name="com.jeneric.eventappfrontend.ui.create.dialogues.DatePickerFragment"
+        android:label="DatePickerFragment" />
 </navigation>

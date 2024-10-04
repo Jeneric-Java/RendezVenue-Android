@@ -10,4 +10,18 @@
     <string name="event_image">Event Image</string>
     <string name="AppName">RendezVenue</string>
     <string name="dummy_text">Lorem ipsum dolor sit amet. In distinctio doloribus et veritatis omnis in temporibus neque non optio dignissimos! Et facilis incidunt in adipisci voluptatem est quos temporibus ut praesentium iste ea voluptas consequuntur est enim delectus At vitae suscipit!</string>
+    <string name="end_time">End Time</string>
+    <string name="start_time">Start Time</string>
+    <string name="date">Date</string>
+    <string name="location">Location</string>
+    <string name="event_description">Event Description</string>
+    <string name="event_name">Event Name</string>
+
+    <string-array name="event_type_list">
+        <item>Arts &amp; Theatre</item>
+        <item>Miscellaneous</item>
+        <item>Sports</item>
+        <item>Music</item>
+        <item>Film</item>
+    </string-array>
 </resources>
