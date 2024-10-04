@@ -22,7 +22,7 @@ public class SpinnerAdapter {
     public static String getSelectedValue(Spinner spinner) {
         return (String) spinner.getSelectedItem();
     }
-    @BindingAdapter("selectedValueAttrChanged")
+    @BindingAdapter("spinnerSelectedValueAttrChanged")
     public static void getSpinnerListeners(Spinner spinner, final InverseBindingListener listener) {
         if (listener != null) {
             spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
