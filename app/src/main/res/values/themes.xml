@@ -1,9 +1,24 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.EventAppFrontend" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Base.Theme.EventAppFrontend" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="android:colorPrimary">@color/marianBlue</item>
+        <item name="colorPrimaryDark">@color/delftBlue</item>
+        <item name="fontFamily">@font/quicksand</item>
+        <item name="buttonStyle">@style/button.style</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowBackground">@color/jet</item>
+        <item name="android:navigationBarColor">@color/marianBlue</item>
+        <item name="android:textColor">@color/whiteSmoke</item>
+        <item name="colorAccent">@color/marianBlue</item>
+        <item name="android:textColorPrimary">@color/marianBlue</item>
     </style>
 
-    <style name="Theme.EventAppFrontend" parent="Base.Theme.EventAppFrontend" />
+    <style name="button.style" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/search_view_bg</item>
+        <item name="backgroundTint">@color/delftBlue</item>
+    </style>
+
+
+    <style name="Theme.EventAppFrontend" parent="Base.Theme.EventAppFrontend">
+    </style>
 </resources>
