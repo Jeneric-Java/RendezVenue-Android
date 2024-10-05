@@ -1,5 +1,6 @@
 package com.jeneric.eventappfrontend.ui.create.dialogues;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import androidx.fragment.app.DialogFragment;
 import com.jeneric.eventappfrontend.R;
 
 import java.util.Calendar;
+import java.util.Locale;
 
 public class TimePickerFragment extends DialogFragment implements TimePickerDialog.OnTimeSetListener {
 
@@ -30,7 +32,7 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
 
     @Override
     public void onTimeSet(TimePicker timePicker, int hour, int minute) {
-        String stringTime = hour + ":" + minute;
+        String stringTime = String.format(Locale.UK ,"%02d:%02d", hour, minute);
         EditText editText = requireActivity().findViewById(R.id.editTextStartTime);
         editText.setText(stringTime);
     }

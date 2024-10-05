@@ -17,6 +17,7 @@ import java.util.Objects;
 
 public class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
 
+
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
@@ -31,7 +32,7 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
 
     @Override
     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-        String stringDate = day + " " + month + " " + year;
+        String stringDate = day + "/" + (month + 1) + "/" + year;
         EditText editText = requireActivity().findViewById(R.id.editTextDate);
         editText.setText(stringDate);
     }
