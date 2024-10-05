@@ -39,9 +39,12 @@ public class SubmitDialogueFragment extends DialogFragment {
         builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                SubmitDialogueFragmentArgs args = SubmitDialogueFragmentArgs.fromBundle(getArguments());
+                String eventTitle = args.getEventTitle();
+
                 Intent intent = new Intent(Intent.ACTION_INSERT)
                         .setData(CalendarContract.Events.CONTENT_URI)
-                        .putExtra(CalendarContract.Events.TITLE, "Test")
+                        .putExtra(CalendarContract.Events.TITLE, eventTitle)
                         .putExtra(CalendarContract.Events.DESCRIPTION, "Test")
                         .putExtra(CalendarContract.Events.EVENT_LOCATION, "Test");
 
