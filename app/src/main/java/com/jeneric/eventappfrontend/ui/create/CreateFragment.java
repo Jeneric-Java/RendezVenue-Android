@@ -16,12 +16,14 @@ import android.view.ViewGroup;
 
 import com.jeneric.eventappfrontend.R;
 import com.jeneric.eventappfrontend.databinding.FragmentCreateBinding;
+import com.jeneric.eventappfrontend.model.EventModel;
 import com.jeneric.eventappfrontend.ui.main.MainActivity;
 
 
 public class CreateFragment extends Fragment {
 
     private Context context;
+    private EventModel event;
 
     public CreateFragment() {
 
@@ -48,6 +50,8 @@ public class CreateFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        binding.setClickHandler(new CreateFragmentClickHandlers(navController, context));
+        event = new EventModel();
+        binding.setClickHandler(new CreateFragmentClickHandlers(navController, context, event));
+        binding.setEvent(event);
     }
 }
