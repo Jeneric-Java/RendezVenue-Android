@@ -16,6 +16,9 @@
     <string name="location">Location</string>
     <string name="event_description">Event Description</string>
     <string name="event_name">Event Name</string>
+    <string name="add_event_to_cal">Add Event to your Calendar?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 
     <string-array name="event_type_list">
         <item>Arts &amp; Theatre</item>
