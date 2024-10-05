@@ -49,6 +49,7 @@ public class SubmitDialogueFragment extends DialogFragment {
                         .putExtra(CalendarContract.Events.EVENT_LOCATION, "Test");
 
                 context.startActivity(intent);
+                navController.navigate(R.id.homeFragment);
             }
         });
         builder.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
