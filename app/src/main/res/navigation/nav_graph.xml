@@ -31,8 +31,8 @@
             android:id="@+id/action_createFragment_to_datePickerFragment"
             app:destination="@id/datePickerFragment" />
         <action
-            android:id="@+id/action_createFragment_to_submitDialogueFragment2"
-            app:destination="@id/submitDialogueFragment2" />
+            android:id="@+id/action_createFragment_to_submitDialogueFragment"
+            app:destination="@id/submitDialogueFragment" />
     </fragment>
     <fragment
         android:id="@+id/exploreFragment"
@@ -62,7 +62,7 @@
         android:name="com.jeneric.eventappfrontend.ui.create.dialogues.DatePickerFragment"
         android:label="DatePickerFragment" />
     <dialog
-        android:id="@+id/submitDialogueFragment2"
+        android:id="@+id/submitDialogueFragment"
         android:name="com.jeneric.eventappfrontend.ui.create.dialogues.SubmitDialogueFragment"
         android:label="SubmitDialogueFragment" />
 </navigation>

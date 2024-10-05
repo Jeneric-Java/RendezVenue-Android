@@ -26,5 +26,8 @@ public class CreateFragmentClickHandlers {
     public void onDateFieldClicked(View view) {
         navController.navigate(R.id.action_createFragment_to_datePickerFragment);
     }
+    public void onSubmitButtonClicked(View view) {
+        navController.navigate(R.id.action_createFragment_to_submitDialogueFragment);
+    }
 
 }
