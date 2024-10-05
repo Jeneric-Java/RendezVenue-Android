@@ -34,9 +34,20 @@ public class CreateFragmentClickHandlers {
         if (eventModel.getEventTitle() == null) {
             Toast.makeText(context, "Make sure all required Fields are filled", Toast.LENGTH_SHORT).show();
         } else {
-            EventModel event = new EventModel();
+            EventModel event = new EventModel(
+                    eventModel.getId(),
+                    eventModel.getEventTitle(),
+                    eventModel.getEventDescription(),
+                    eventModel.getEventLocation(),
+                    eventModel.getEventURL(),
+                    eventModel.getEventType(),
+                    eventModel.getStartTime(),
+                    eventModel.getEndTime()
+            );
             //TODO: Call method to save album
-            navController.navigate(R.id.action_createFragment_to_submitDialogueFragment);
+            CreateFragmentDirections.ActionCreateFragmentToSubmitDialogueFragment action = CreateFragmentDirections.actionCreateFragmentToSubmitDialogueFragment(
+                    event.getEventTitle());
+            navController.navigate(action);
         }
     }
 
