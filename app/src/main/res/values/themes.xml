@@ -5,24 +5,24 @@
         <item name="colorPrimaryDark">@color/delftBlue</item>
         <item name="fontFamily">@font/quicksand</item>
         <item name="buttonStyle">@style/button.style</item>
-        <item name="android:windowBackground">@color/jet</item>
+        <item name="android:windowBackground">@color/whiteSmoke</item>
         <item name="android:navigationBarColor">@color/marianBlue</item>
-        <item name="android:textColor">@color/whiteSmoke</item>
+        <item name="android:textColor">@color/jet</item>
         <item name="editTextStyle">@style/editText.style</item>
         <item name="android:spinnerStyle">@style/spinner.style</item>
-        <item name="android:spinnerDropDownItemStyle">@color/tangBlue</item>
-        <item name="android:textColorPrimary">@color/whiteSmoke</item>
+        <item name="android:textColorPrimary">@color/jet</item>
         <item name="cardViewStyle">@style/cardEventItem_style</item>
     </style>
 
     <style name="button.style" parent="Widget.AppCompat.Button">
         <item name="android:background">@drawable/search_view_bg</item>
-        <item name="backgroundTint">@color/delftBlue</item>
+        <item name="backgroundTint">@color/tangBlue</item>
+        <item name="android:textColor">@color/whiteSmoke</item>
     </style>
 
     <style name="spinner.style" parent="Widget.AppCompat.Spinner">
         <item name="android:background">@drawable/search_view_bg</item>
-        <item name="backgroundTint">@color/jet</item>
+        <item name="backgroundTint">@color/whiteSmoke</item>
         <item name="android:popupBackground">@drawable/spinner_shape</item>
     </style>
 
@@ -38,6 +38,7 @@
     <style name="navBar_style">
         <item name="itemIconTint">@drawable/nav_icon_color</item>
         <item name="itemTextColor">@drawable/nav_icon_color</item>
+        <item name="android:textColor">@color/whiteSmoke</item>
         <item name="android:background">@color/marianBlue</item>
         <item name="android:tint">@color/frenchGrey</item>
     </style>
