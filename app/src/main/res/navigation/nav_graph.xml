@@ -8,7 +8,8 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.jeneric.eventappfrontend.ui.home.HomeFragment"
-        android:label="HomeFragment" >
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_createFragment"
             app:destination="@id/createFragment" />
@@ -51,7 +52,7 @@
     <fragment
         android:id="@+id/eventDetailsFragment2"
         android:name="com.jeneric.eventappfrontend.ui.eventdetails.EventDetailsFragment"
-        android:label="EventDetailsFragment" />
+        android:label="EventDetailsFragment"
         tools:layout="@layout/fragment_explore" />
     <dialog
         android:id="@+id/timePickerFragment"
@@ -64,5 +65,9 @@
     <dialog
         android:id="@+id/submitDialogueFragment"
         android:name="com.jeneric.eventappfrontend.ui.create.dialogues.SubmitDialogueFragment"
-        android:label="SubmitDialogueFragment" />
+        android:label="SubmitDialogueFragment" >
+    <argument
+        android:name="eventTitle"
+        app:argType="string" />
+    </dialog>
 </navigation>
