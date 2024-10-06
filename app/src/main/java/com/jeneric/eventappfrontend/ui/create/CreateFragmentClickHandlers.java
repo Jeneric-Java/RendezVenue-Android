@@ -41,9 +41,12 @@ public class CreateFragmentClickHandlers {
                     eventModel.getEventLocation(),
                     eventModel.getEventURL(),
                     eventModel.getEventType(),
+                    eventModel.getStartDate(),
                     eventModel.getStartTime(),
+                    eventModel.getEndDate(),
                     eventModel.getEndTime()
             );
+
             //TODO: Call method to save album
             CreateFragmentDirections.ActionCreateFragmentToSubmitDialogueFragment action = CreateFragmentDirections.actionCreateFragmentToSubmitDialogueFragment(
                     event.getEventTitle());
