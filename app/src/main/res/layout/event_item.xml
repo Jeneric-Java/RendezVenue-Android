@@ -2,6 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
 
         <variable
@@ -17,7 +18,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-        
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -32,10 +33,10 @@
                 android:contentDescription="@string/event_image"
                 android:scaleType="fitXY"
                 android:src="@mipmap/img_placeholder_indoor"
-                app:shapeAppearanceOverlay="@style/RoundedImageView"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:shapeAppearanceOverlay="@style/RoundedImageView" />
 
             <TextView
                 android:id="@+id/textview_event_title"
@@ -44,10 +45,10 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="@{event.eventTitle}"
+                android:textSize="16sp"
                 app:layout_constraintLeft_toRightOf="@id/event_img"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="Event Title"
-                android:textSize="16sp"/>
+                tools:text="Event Title" />
 
             <TextView
                 android:id="@+id/textview_event_location"
@@ -61,14 +62,25 @@
                 tools:text="Event Location" />
 
             <TextView
+                android:id="@+id/textview_event_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textview_event_date"
+                android:text="@{event.startDate}"
                 android:textSize="14sp"
-                tools:text="Day Month Hour Minute"
-                android:text="@{String.valueOf(event.startTime)}"
                 app:layout_constraintLeft_toLeftOf="@id/textview_event_location"
-                app:layout_constraintTop_toBottomOf="@id/textview_event_location"/>
+                app:layout_constraintTop_toBottomOf="@id/textview_event_location"
+                tools:text="Day Month" />
+
+            <TextView
+                android:id="@+id/textview_event_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@{event.startTime}"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toRightOf="@id/textview_event_date"
+                app:layout_constraintTop_toBottomOf="@id/textview_event_location"
+                tools:text="Hour Minute" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
