@@ -32,7 +32,6 @@ public class HomeFragment extends Fragment {
     private LinearLayout eventContainer;
     private List<EventModel> userEventList = new ArrayList<>();
     private FragmentHomeBinding binding;
-    private HomeClickHandlers clickHandlers;
     private NavController navController;
 
 
