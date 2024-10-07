@@ -51,7 +51,7 @@
         android:label="fragment_explore"
         tools:layout="@layout/fragment_explore">
         <action
-            android:id="@+id/action_exploreFragment_to_eventDetailsFragment2"
+            android:id="@+id/action_exploreFragment_to_eventDetailsFragment"
             app:destination="@id/eventDetailsFragment" />
     </fragment>
     <fragment
