@@ -40,6 +40,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
     public void onBindViewHolder(@NonNull EventViewHolder holder, int position) {
         EventModel event = eventList.get(position);
         holder.eventItemBinding.setEvent(event);
+        holder.eventItemBinding.executePendingBindings();
     }
 
     @Override

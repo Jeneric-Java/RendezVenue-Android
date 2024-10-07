@@ -52,7 +52,8 @@ public class CreateFragmentClickHandlers {
                     eventModel.getStartDate(),
                     eventModel.getStartTime(),
                     eventModel.getEndDate(),
-                    eventModel.getEndTime()
+                    eventModel.getEndTime(),
+                    eventModel.getImageUrl()
             );
 //            timeConvertor.getStartYear();
 
