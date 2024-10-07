@@ -13,34 +13,25 @@ import com.jeneric.eventappfrontend.BR;
 
 public class EventModel extends BaseObservable implements Parcelable {
 
-    @SerializedName("id")
+
     private long id;
-    @SerializedName("eventTitle")
-    private String eventTitle;
-    @SerializedName("eventDescription")
-    private String eventDescription;
-    @SerializedName("eventLocation")
-    private String eventLocation;
-    @SerializedName("eventURL")
-    private String eventURL;
-    @SerializedName("eventType")
-    private String eventType;
-    @SerializedName("startDate")
+    private String title;
+    private String description;
+    private String location;
+    private String url;
+    private String type;
     private String startDate;
-    @SerializedName("startTime")
     private String startTime;
-    @SerializedName("endDate")
     private String endDate;
-    @SerializedName("endTime")
     private String endTime;
 
-    public EventModel(long id, String eventTitle, String eventDescription, String eventLocation, String eventURL, String eventType, String startDate, String startTime, String endDate, String endTime) {
+    public EventModel(long id, String title, String description, String location, String url, String type, String startDate, String startTime, String endDate, String endTime) {
         this.id = id;
-        this.eventTitle = eventTitle;
-        this.eventDescription = eventDescription;
-        this.eventLocation = eventLocation;
-        this.eventURL = eventURL;
-        this.eventType = eventType;
+        this.title = title;
+        this.description = description;
+        this.location = location;
+        this.url = url;
+        this.type = type;
         this.startDate = startDate;
         this.startTime = startTime;
         this.endDate = endDate;
@@ -52,11 +43,11 @@ public class EventModel extends BaseObservable implements Parcelable {
 
     protected EventModel(Parcel in) {
         id = in.readLong();
-        eventTitle = in.readString();
-        eventDescription = in.readString();
-        eventLocation = in.readString();
-        eventURL = in.readString();
-        eventType = in.readString();
+        title = in.readString();
+        description = in.readString();
+        location = in.readString();
+        url = in.readString();
+        type = in.readString();
         startDate = in.readString();
         startTime = in.readString();
         endDate = in.readString();
@@ -86,52 +77,52 @@ public class EventModel extends BaseObservable implements Parcelable {
     }
 
     @Bindable
-    public String getEventTitle() {
-        return eventTitle;
+    public String getTitle() {
+        return title;
     }
 
-    public void setEventTitle(String eventTitle) {
-        this.eventTitle = eventTitle;
-        notifyPropertyChanged(BR.eventTitle);
+    public void setTitle(String title) {
+        this.title = title;
+        notifyPropertyChanged(BR.title);
     }
     @Bindable
-    public String getEventDescription() {
-        return eventDescription;
+    public String getDescription() {
+        return description;
     }
 
 
-    public void setEventDescription(String eventDescription) {
-        this.eventDescription = eventDescription;
-        notifyPropertyChanged(BR.eventDescription);
-    }
-
-    @Bindable
-    public String getEventLocation() {
-        return eventLocation;
-    }
-
-    public void setEventLocation(String eventLocation) {
-        this.eventLocation = eventLocation;
-        notifyPropertyChanged(BR.eventLocation);
-    }
-    @Bindable
-    public String getEventURL() {
-        return eventURL;
-    }
-
-    public void setEventURL(String eventURL) {
-        this.eventURL = eventURL;
-        notifyPropertyChanged(BR.eventURL);
+    public void setDescription(String description) {
+        this.description = description;
+        notifyPropertyChanged(BR.description);
     }
 
     @Bindable
-    public String getEventType() {
-        return eventType;
+    public String getLocation() {
+        return location;
     }
 
-    public void setEventType(String eventType) {
-        this.eventType = eventType;
-        notifyPropertyChanged(BR.eventType);
+    public void setLocation(String location) {
+        this.location = location;
+        notifyPropertyChanged(BR.location);
+    }
+    @Bindable
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+        notifyPropertyChanged(BR.url);
+    }
+
+    @Bindable
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+        notifyPropertyChanged(BR.type);
     }
 
     @Bindable
@@ -182,11 +173,11 @@ public class EventModel extends BaseObservable implements Parcelable {
     @Override
     public void writeToParcel(@NonNull Parcel dest, int flags) {
         dest.writeLong(id);
-        dest.writeString(eventTitle);
-        dest.writeString(eventDescription);
-        dest.writeString(eventLocation);
-        dest.writeString(eventURL);
-        dest.writeString(eventType);
+        dest.writeString(title);
+        dest.writeString(description);
+        dest.writeString(location);
+        dest.writeString(url);
+        dest.writeString(type);
         dest.writeString(startDate);
         dest.writeString(startTime);
         dest.writeString(endDate);
