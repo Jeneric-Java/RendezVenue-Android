@@ -2,6 +2,7 @@ package com.jeneric.eventappfrontend.ui.home;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.SearchView;
 
@@ -24,4 +25,12 @@ public class HomeClickHandlers {
     public void onSearchBarClick(View view) {
         navController.navigate(R.id.action_homeFragment_to_exploreFragment);
     }
+
+    public void onCategoryClick(String category) {
+        // Pass category as argument to the ExploreFragment
+        Bundle bundle = new Bundle();
+        bundle.putString("category", category);
+        navController.navigate(R.id.action_homeFragment_to_exploreFragment, bundle);
+    }
+
 }

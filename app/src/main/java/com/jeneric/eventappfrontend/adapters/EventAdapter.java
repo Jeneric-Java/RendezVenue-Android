@@ -68,4 +68,9 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
             });
         }
     }
+
+    public void setFilteredList(List<EventModel> filteredList) {
+        eventList = filteredList;
+        notifyDataSetChanged();
+    }
 }
