@@ -43,6 +43,9 @@ public class SubmitDialogueFragment extends DialogFragment {
             public void onClick(DialogInterface dialogInterface, int i) {
                 SubmitDialogueFragmentArgs args = SubmitDialogueFragmentArgs.fromBundle(getArguments());
                 String eventTitle = args.getEventTitle();
+                String eventDescription = args.getEventDescription();
+                String eventLocation = args.getEventLocation();
+                String eventType = args.getEventType();
 
                 int startYear = args.getStartYear();
                 int startMonth = args.getStartMonth();
@@ -65,8 +68,8 @@ public class SubmitDialogueFragment extends DialogFragment {
                 Intent intent = new Intent(Intent.ACTION_INSERT)
                         .setData(CalendarContract.Events.CONTENT_URI)
                         .putExtra(CalendarContract.Events.TITLE, eventTitle)
-                        .putExtra(CalendarContract.Events.DESCRIPTION, "Test")
-                        .putExtra(CalendarContract.Events.EVENT_LOCATION, "Test")
+                        .putExtra(CalendarContract.Events.DESCRIPTION, eventDescription + eventType)
+                        .putExtra(CalendarContract.Events.EVENT_LOCATION, eventLocation)
                         .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, startTime.getTimeInMillis())
                         .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endTime.getTimeInMillis());
 
