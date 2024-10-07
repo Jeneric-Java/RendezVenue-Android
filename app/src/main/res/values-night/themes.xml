@@ -1,8 +1,81 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.EventAppFrontend" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="android:colorPrimary">@color/marianBlue</item>
+        <item name="colorPrimaryDark">@color/delftBlue</item>
+        <item name="fontFamily">@font/quicksand</item>
+        <item name="buttonStyle">@style/button.style</item>
+        <item name="android:windowBackground">@color/jet</item>
+        <item name="android:navigationBarColor">@color/marianBlue</item>
+        <item name="android:textColor">@color/whiteSmoke</item>
+        <item name="editTextStyle">@style/editText.style</item>
+        <item name="android:spinnerStyle">@style/spinner.style</item>
+        <item name="android:textColorPrimary">@color/whiteSmoke</item>
+        <item name="cardViewStyle">@style/cardEventItem_style</item>
+        <item name="buttonBarPositiveButtonStyle">@style/DialogButtonStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/DialogButtonStyle</item>
+
+        <item name="android:timePickerDialogTheme">@style/CustomPickerDialogTheme</item>
+        <item name="android:datePickerDialogTheme">@style/CustomPickerDialogTheme</item>
 
     </style>
+
+    <style name="button.style" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/button_shape</item>
+        <item name="backgroundTint">@color/tangBlue</item>
+        <item name="android:textColor">@color/whiteSmoke</item>
+    </style>
+
+    <style name="spinner.style" parent="Widget.AppCompat.Spinner">
+        <item name="android:background">@drawable/button_shape</item>
+        <item name="backgroundTint">@color/jet</item>
+        <item name="android:popupBackground">@drawable/spinner_shape</item>
+    </style>
+
+    <style name="editText.style" parent="Widget.AppCompat.EditText">
+        <item name="android:textColorHint">@color/frenchGrey</item>
+        <item name="backgroundTint">@color/frenchGrey</item>
+    </style>
+
+    <style name="icon_style">
+        <item name="tint">@color/frenchGrey</item>
+    </style>
+
+    <style name="navBar_style">
+        <item name="itemIconTint">@drawable/nav_icon_color</item>
+        <item name="itemTextColor">@drawable/nav_icon_color</item>
+        <item name="android:textColor">@color/whiteSmoke</item>
+        <item name="android:background">@color/marianBlue</item>
+        <item name="android:tint">@color/frenchGrey</item>
+    </style>
+
+    <style name="appbar_calendar_style">
+        <item name="android:tint">@color/frenchGrey</item>
+    </style>
+
+    <style name="cardEventItem_style" parent="CardView">
+        <item name="cardBackgroundColor">#C1C1C1</item>
+    </style>
+
+    <style name="Theme.EventAppFrontend" parent="Base.Theme.EventAppFrontend">
+    </style>
+
+
+
+    <style name="CustomPickerDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!-- Customize dialog button styles -->
+        <item name="buttonBarPositiveButtonStyle">@style/DialogButtonStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/DialogButtonStyle</item>
+
+        <!-- Customize dialog title and text color -->
+        <item name="android:textColorPrimary">@color/whiteSmoke</item>
+        <item name="android:textColorSecondary">@color/whiteSmoke</item>
+    </style>
+
+
+
+    <style name="DialogButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/whiteSmoke</item> <!-- Ensure the text is readable -->
+    </style>
+
 </resources>
