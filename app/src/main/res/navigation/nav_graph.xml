@@ -88,6 +88,16 @@
             android:name="eventTitle"
             app:argType="string" />
         <argument
+            android:name="eventDescription"
+            app:argType="string" />
+        <argument
+            android:name="eventLocation"
+            app:argType="string" />
+        <argument
+            android:name="eventType"
+            app:argType="string" />
+
+        <argument
             android:name="startYear"
             app:argType="integer" />
         <argument

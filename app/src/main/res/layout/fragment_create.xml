@@ -97,10 +97,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="10dp"
+        android:inputType="text"
         android:hint="@string/date"
         android:focusable="false"
         android:cursorVisible="false"
         android:onClick="@{clickHandler::onDateFieldClicked}"
+        android:text="@={event.startDate}"
         />
 
     <EditText
@@ -114,11 +116,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="10dp"
+        android:inputType="text"
         android:hint="@string/start_time"
         android:clickable="false"
         android:focusable="false"
         android:cursorVisible="false"
         android:onClick="@{clickHandler::onTimeFieldClicked}"
+        android:text="@={event.startTime}"
         />
 
     <EditText
@@ -132,11 +136,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="10dp"
+        android:inputType="text"
         android:hint="@string/end_time"
         android:clickable="false"
         android:focusable="false"
         android:cursorVisible="false"
-        android:onClick="@{clickHandler::onEndTimeFieldClicked}"/>
+        android:onClick="@{clickHandler::onEndTimeFieldClicked}"
+        android:text="@={event.endTime}"/>
 
     <Button
         android:id="@+id/create_event_button"

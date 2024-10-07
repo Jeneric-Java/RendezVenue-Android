@@ -5,12 +5,11 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 
 import com.jeneric.eventappfrontend.R;
 import com.jeneric.eventappfrontend.model.EventModel;
 import com.jeneric.eventappfrontend.model.TimeConvertor;
-import com.jeneric.eventappfrontend.ui.create.dialogues.TimePickerFragment;
+import com.jeneric.eventappfrontend.ui.main.MainActivityViewModel;
 
 public class CreateFragmentClickHandlers {
 
@@ -19,11 +18,14 @@ public class CreateFragmentClickHandlers {
     NavController navController;
     Context context;
 
-    public CreateFragmentClickHandlers(NavController navController, Context context, EventModel eventModel, TimeConvertor timeConvertor) {
+    MainActivityViewModel viewModel;
+
+    public CreateFragmentClickHandlers(NavController navController, Context context, EventModel eventModel, TimeConvertor timeConvertor, MainActivityViewModel viewModel) {
         this.navController = navController;
         this.context = context;
         this.eventModel = eventModel;
         this.timeConvertor = timeConvertor;
+        this.viewModel = viewModel;
     }
 
     public void onTimeFieldClicked(View view) {
@@ -57,6 +59,10 @@ public class CreateFragmentClickHandlers {
             //TODO: Call method to save album
             CreateFragmentDirections.ActionCreateFragmentToSubmitDialogueFragment action = CreateFragmentDirections.actionCreateFragmentToSubmitDialogueFragment(
                     event.getTitle(),
+                    event.getDescription(),
+                    event.getLocation(),
+                    event.getType(),
+
                     timeConvertor.getStartYear(),
                     timeConvertor.getStartMonth(),
                     timeConvertor.getStartDay(),
@@ -66,7 +72,10 @@ public class CreateFragmentClickHandlers {
                     timeConvertor.getEndMonth(),
                     timeConvertor.getEndDay(),
                     timeConvertor.getEndHour(),
-                    timeConvertor.getEndMinute());
+                    timeConvertor.getEndMinute()
+            );
+            viewModel.addNewEvent(event);
+
             navController.navigate(action);
         }
     }

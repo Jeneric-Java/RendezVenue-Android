@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
@@ -18,7 +19,7 @@ import com.jeneric.eventappfrontend.R;
 import com.jeneric.eventappfrontend.databinding.FragmentCreateBinding;
 import com.jeneric.eventappfrontend.model.EventModel;
 import com.jeneric.eventappfrontend.model.TimeConvertor;
-import com.jeneric.eventappfrontend.ui.create.dialogues.DateTimePickerListener;
+import com.jeneric.eventappfrontend.ui.main.MainActivityViewModel;
 import com.jeneric.eventappfrontend.ui.main.MainActivity;
 
 
@@ -27,6 +28,8 @@ public class CreateFragment extends Fragment {
     private Context context;
     private EventModel event;
     TimeConvertor timeConvertor;
+
+    MainActivityViewModel viewModel;
 
     public CreateFragment() {
 
@@ -51,13 +54,15 @@ public class CreateFragment extends Fragment {
 
          binding = DataBindingUtil.inflate(inflater, R.layout.fragment_create, container, false);
          navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container);
+
+         viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
         return binding.getRoot();
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         event = new EventModel();
-        binding.setClickHandler(new CreateFragmentClickHandlers(navController, context, event, timeConvertor));
+        binding.setClickHandler(new CreateFragmentClickHandlers(navController, context, event, timeConvertor, viewModel));
         binding.setEvent(event);
     }
 

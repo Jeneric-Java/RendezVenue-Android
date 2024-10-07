@@ -23,6 +23,7 @@ import com.jeneric.eventappfrontend.R;
 import com.jeneric.eventappfrontend.adapters.EventAdapter;
 import com.jeneric.eventappfrontend.databinding.FragmentExploreBinding;
 import com.jeneric.eventappfrontend.model.EventModel;
+import com.jeneric.eventappfrontend.ui.main.MainActivityViewModel;
 import com.jeneric.eventappfrontend.ui.main.RecyclerViewInterface;
 
 import java.util.List;
@@ -32,7 +33,7 @@ public class ExploreFragment extends Fragment implements RecyclerViewInterface{
 
     private RecyclerView recyclerView;
     private Context context;
-    private ExploreFragmentViewModel viewModel;
+    private MainActivityViewModel viewModel;
     private EventAdapter adapter;
     private FragmentExploreBinding binding;
     private NavController navController;
@@ -58,7 +59,7 @@ public class ExploreFragment extends Fragment implements RecyclerViewInterface{
         navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container);
         recyclerView = binding.searchFragmentRecyclerView;
 
-        viewModel = new ViewModelProvider(this).get(ExploreFragmentViewModel.class);
+        viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
 
         getAllEvents();
 
