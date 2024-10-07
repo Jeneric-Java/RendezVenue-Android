@@ -132,11 +132,37 @@
             android:layout_marginBottom="29dp"
             android:fontFamily="sans-serif"
             android:text="@{event.startTime}"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toTopOf="@+id/eventdetails_description"
-            app:layout_constraintRight_toRightOf="parent"
+            android:textSize="14sp" app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toEndOf="@id/eventdetails_date"
+            app:layout_constraintBaseline_toBaselineOf="@id/eventdetails_date"
             tools:text="9:00 AM" />
+
+        <ImageView
+            android:id="@+id/eventdetails_globe_icon"
+            style="@style/icon_style"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="342dp"
+            android:src="@drawable/globe_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eventdetails_calendar_icon" />
+
+        <TextView
+            android:id="@+id/eventdetails_url"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif"
+            android:text="@{event.eventURL}"
+            android:textSize="14sp"
+            android:autoLink="web"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/eventdetails_globe_icon"
+            app:layout_constraintTop_toBottomOf="@id/eventdetails_date"
+            tools:text="URL Link" />
 
         <TextView
             android:id="@+id/eventdetails_description"
@@ -150,10 +176,10 @@
             app:autoSizeTextType="none"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.737"
-            app:layout_constraintLeft_toLeftOf="@id/eventdetails_calendar_icon"
+            app:layout_constraintLeft_toLeftOf="@id/eventdetails_globe_icon"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/eventdetails_date"
+            app:layout_constraintTop_toBottomOf="@id/eventdetails_globe_icon"
             tools:text="@string/dummy_text" />
 
         <!--    Conditional Buttons -->
