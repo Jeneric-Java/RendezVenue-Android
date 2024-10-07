@@ -22,6 +22,6 @@ public class HomeClickHandlers {
     }
 
     public void onSearchBarClick(View view) {
-        navController.navigate(R.id.exploreFragment);
+        navController.navigate(R.id.action_homeFragment_to_exploreFragment);
     }
 }
