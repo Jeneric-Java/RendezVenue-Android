@@ -68,8 +68,40 @@
         android:id="@+id/submitDialogueFragment"
         android:name="com.jeneric.eventappfrontend.ui.create.dialogues.SubmitDialogueFragment"
         android:label="SubmitDialogueFragment" >
-    <argument
-        android:name="eventTitle"
-        app:argType="string" />
+        <argument
+            android:name="eventTitle"
+            app:argType="string" />
+
+        <argument
+            android:name="startYear"
+            app:argType="integer" />
+        <argument
+            android:name="startMonth"
+            app:argType="integer" />
+        <argument
+            android:name="startDay"
+            app:argType="integer" />
+        <argument
+            android:name="startHour"
+            app:argType="integer" />
+        <argument
+            android:name="startMinute"
+            app:argType="integer" />
+
+        <argument
+            android:name="endYear"
+            app:argType="integer" />
+        <argument
+            android:name="endMonth"
+            app:argType="integer" />
+        <argument
+            android:name="endDay"
+            app:argType="integer" />
+        <argument
+            android:name="endHour"
+            app:argType="integer" />
+        <argument
+            android:name="endMinute"
+            app:argType="integer" />
     </dialog>
 </navigation>
