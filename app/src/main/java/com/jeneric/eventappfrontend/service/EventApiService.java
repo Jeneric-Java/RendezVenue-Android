@@ -12,11 +12,12 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface EventApiService {
 
     @GET("events")
-    Call<List<EventModel>> getAllEvents();
+    Call<List<EventModel>> getAllEvents(@Query("geoHashEnc") String geoHashEnc);
 
     @POST("events")
     Call<EventModel> addNewEvent(@Body EventModel event);
