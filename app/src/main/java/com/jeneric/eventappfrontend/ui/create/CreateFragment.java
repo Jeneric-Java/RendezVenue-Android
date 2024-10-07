@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import com.jeneric.eventappfrontend.R;
 import com.jeneric.eventappfrontend.databinding.FragmentCreateBinding;
 import com.jeneric.eventappfrontend.model.EventModel;
+import com.jeneric.eventappfrontend.model.TimeConvertor;
 import com.jeneric.eventappfrontend.ui.main.MainActivity;
 
 
