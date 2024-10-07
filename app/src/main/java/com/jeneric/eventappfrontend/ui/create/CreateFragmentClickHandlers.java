@@ -56,10 +56,10 @@ public class CreateFragmentClickHandlers {
 
             //TODO: Call method to save album
             CreateFragmentDirections.ActionCreateFragmentToSubmitDialogueFragment action = CreateFragmentDirections.actionCreateFragmentToSubmitDialogueFragment(
-                    event.getEventTitle(),
-                    event.getEventDescription(),
-                    event.getEventLocation(),
-                    event.getEventType(),
+                    event.getTitle(),
+                    event.getDescription(),
+                    event.getLocation(),
+                    event.getType(),
 
                     timeConvertor.getStartYear(),
                     timeConvertor.getStartMonth(),
