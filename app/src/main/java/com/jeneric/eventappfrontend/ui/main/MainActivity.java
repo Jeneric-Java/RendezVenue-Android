@@ -1,6 +1,10 @@
 package com.jeneric.eventappfrontend.ui.main;
 
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -14,11 +18,22 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.jeneric.eventappfrontend.R;
 import com.jeneric.eventappfrontend.databinding.ActivityMainBinding;
 import com.jeneric.eventappfrontend.model.TimeConvertor;
+import com.jeneric.eventappfrontend.service.location.utilities.LocationParser;
 import com.jeneric.eventappfrontend.ui.create.CreateFragment;
 import com.jeneric.eventappfrontend.ui.create.dialogues.DateTimePickerListener;
 import com.jeneric.eventappfrontend.ui.explore.ExploreFragment;
 import com.jeneric.eventappfrontend.ui.home.HomeFragment;
 import com.jeneric.eventappfrontend.ui.settings.SettingsFragment;
+
+import java.io.IOException;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
+
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 
 public class MainActivity extends AppCompatActivity implements DateTimePickerListener {
 
@@ -30,6 +45,18 @@ public class MainActivity extends AppCompatActivity implements DateTimePickerLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+
+        try {
+            Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            assert location != null;
+            LocationParser.toGeoHashEnc(location.getLatitude(), location.getLongitude());
+        } catch (SecurityException | IllegalArgumentException | NoSuchPaddingException | InvalidAlgorithmParameterException | IllegalBlockSizeException | NoSuchAlgorithmException | InvalidKeySpecException | IOException | BadPaddingException | InvalidKeyException e) {
+            Log.d("GPS Status", "GPS Disabled");
+        }
+
+
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -91,4 +118,11 @@ public class MainActivity extends AppCompatActivity implements DateTimePickerLis
         timeConvertor.setEndHour(hour);
         timeConvertor.setEndMinute(minute);
     }
+
+    private final LocationListener mLocationListener = new LocationListener() {
+        @Override
+        public void onLocationChanged(final Location location) {
+            //your code here
+        }
+    };
 }
