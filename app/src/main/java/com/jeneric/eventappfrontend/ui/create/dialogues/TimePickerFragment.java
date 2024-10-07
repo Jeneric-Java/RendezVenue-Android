@@ -3,6 +3,7 @@ package com.jeneric.eventappfrontend.ui.create.dialogues;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.widget.EditText;
@@ -19,6 +20,18 @@ import java.util.Locale;
 
 public class TimePickerFragment extends DialogFragment implements TimePickerDialog.OnTimeSetListener {
 
+    private DateTimePickerListener listener;
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        if (context instanceof DateTimePickerListener) {
+            listener = (DateTimePickerListener) context;
+        } else {
+            throw new ClassCastException(context.toString() + " must implement PickerListener");
+        }
+    }
+
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
@@ -33,7 +46,12 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
     @Override
     public void onTimeSet(TimePicker timePicker, int hour, int minute) {
         String stringTime = String.format(Locale.UK ,"%02d:%02d", hour, minute);
+        if (listener != null) {
+            listener.onStartTimeSelected(hour, minute);
+        }
         EditText editText = requireActivity().findViewById(R.id.editTextStartTime);
         editText.setText(stringTime);
+
+        dismiss();
     }
 }

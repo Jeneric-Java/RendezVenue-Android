@@ -18,13 +18,15 @@ import com.jeneric.eventappfrontend.R;
 import com.jeneric.eventappfrontend.databinding.FragmentCreateBinding;
 import com.jeneric.eventappfrontend.model.EventModel;
 import com.jeneric.eventappfrontend.model.TimeConvertor;
+import com.jeneric.eventappfrontend.ui.create.dialogues.DateTimePickerListener;
 import com.jeneric.eventappfrontend.ui.main.MainActivity;
 
 
-public class CreateFragment extends Fragment {
+public class CreateFragment extends Fragment implements DateTimePickerListener {
 
     private Context context;
     private EventModel event;
+    TimeConvertor timeConvertor;
 
     public CreateFragment() {
 
@@ -54,5 +56,24 @@ public class CreateFragment extends Fragment {
         event = new EventModel();
         binding.setClickHandler(new CreateFragmentClickHandlers(navController, context, event));
         binding.setEvent(event);
+    }
+
+    @Override
+    public void onStartDateSelected(int year, int month, int day) {
+        timeConvertor.setStartYear(year);
+        timeConvertor.setStartMonth(month);
+        timeConvertor.setStartDay(day);
+    }
+
+    @Override
+    public void onStartTimeSelected(int hour, int minute) {
+        timeConvertor.setStartHour(hour);
+        timeConvertor.setStartMinute(minute);
+    }
+
+    @Override
+    public void onEndTimeSelected(int hour, int minute) {
+        timeConvertor.setEndHour(hour);
+        timeConvertor.setEndMinute(minute);
     }
 }

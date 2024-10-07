@@ -2,6 +2,7 @@ package com.jeneric.eventappfrontend.ui.create.dialogues;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -17,6 +18,18 @@ import java.util.Objects;
 
 public class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
 
+    private DateTimePickerListener listener;
+
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        if (context instanceof DateTimePickerListener) {
+            listener = (DateTimePickerListener) context;
+        } else {
+            throw new ClassCastException(context.toString() + " must implement PickerListener");
+        }
+    }
 
     @NonNull
     @Override
@@ -33,7 +46,12 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
     @Override
     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
         String stringDate = day + "/" + (month + 1) + "/" + year;
+        if (listener != null) {
+            listener.onStartDateSelected(year, month, day);
+        }
         EditText editText = requireActivity().findViewById(R.id.editTextDate);
         editText.setText(stringDate);
+
+        dismiss();
     }
 }
