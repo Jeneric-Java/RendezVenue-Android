@@ -9,6 +9,9 @@
         <variable
             name="event"
             type="com.jeneric.eventappfrontend.model.EventModel" />
+        <variable
+            name="clickHandler"
+            type="com.jeneric.eventappfrontend.ui.eventdetails.EventDetailsClickHandler" />
 
     </data>
 
@@ -200,7 +203,8 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/eventdetails_description"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="1.0"
+            android:onClick="@{clickHandler::onAddToCalClicked}" />
 
         <Button
             android:id="@+id/eventdetails_button_removeevent"
