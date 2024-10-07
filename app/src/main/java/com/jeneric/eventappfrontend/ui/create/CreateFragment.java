@@ -19,8 +19,7 @@ import com.jeneric.eventappfrontend.R;
 import com.jeneric.eventappfrontend.databinding.FragmentCreateBinding;
 import com.jeneric.eventappfrontend.model.EventModel;
 import com.jeneric.eventappfrontend.model.TimeConvertor;
-import com.jeneric.eventappfrontend.ui.create.dialogues.DateTimePickerListener;
-import com.jeneric.eventappfrontend.ui.explore.ExploreFragmentViewModel;
+import com.jeneric.eventappfrontend.ui.main.MainActivityViewModel;
 import com.jeneric.eventappfrontend.ui.main.MainActivity;
 
 
@@ -30,7 +29,7 @@ public class CreateFragment extends Fragment {
     private EventModel event;
     TimeConvertor timeConvertor;
 
-    ExploreFragmentViewModel viewModel;
+    MainActivityViewModel viewModel;
 
     public CreateFragment() {
 
@@ -56,7 +55,7 @@ public class CreateFragment extends Fragment {
          binding = DataBindingUtil.inflate(inflater, R.layout.fragment_create, container, false);
          navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container);
 
-         viewModel = new ViewModelProvider(this).get(ExploreFragmentViewModel.class);
+         viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
         return binding.getRoot();
     }
 

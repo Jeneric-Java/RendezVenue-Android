@@ -5,13 +5,11 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 
 import com.jeneric.eventappfrontend.R;
 import com.jeneric.eventappfrontend.model.EventModel;
 import com.jeneric.eventappfrontend.model.TimeConvertor;
-import com.jeneric.eventappfrontend.ui.create.dialogues.TimePickerFragment;
-import com.jeneric.eventappfrontend.ui.explore.ExploreFragmentViewModel;
+import com.jeneric.eventappfrontend.ui.main.MainActivityViewModel;
 
 public class CreateFragmentClickHandlers {
 
@@ -20,9 +18,9 @@ public class CreateFragmentClickHandlers {
     NavController navController;
     Context context;
 
-    ExploreFragmentViewModel viewModel;
+    MainActivityViewModel viewModel;
 
-    public CreateFragmentClickHandlers(NavController navController, Context context, EventModel eventModel, TimeConvertor timeConvertor, ExploreFragmentViewModel viewModel) {
+    public CreateFragmentClickHandlers(NavController navController, Context context, EventModel eventModel, TimeConvertor timeConvertor, MainActivityViewModel viewModel) {
         this.navController = navController;
         this.context = context;
         this.eventModel = eventModel;

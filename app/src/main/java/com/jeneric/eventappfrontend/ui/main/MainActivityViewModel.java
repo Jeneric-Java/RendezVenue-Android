@@ -1,4 +1,4 @@
-package com.jeneric.eventappfrontend.ui.explore;
+package com.jeneric.eventappfrontend.ui.main;
 
 import android.app.Application;
 
@@ -11,11 +11,11 @@ import com.jeneric.eventappfrontend.repository.EventRepository;
 
 import java.util.List;
 
-public class ExploreFragmentViewModel extends AndroidViewModel {
+public class MainActivityViewModel extends AndroidViewModel {
     EventRepository eventRepository;
 
 
-    public ExploreFragmentViewModel(@NonNull Application application) {
+    public MainActivityViewModel(@NonNull Application application) {
         super(application);
         this.eventRepository = new EventRepository(application);
     }
