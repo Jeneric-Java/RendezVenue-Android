@@ -9,18 +9,21 @@ import androidx.navigation.Navigation;
 
 import com.jeneric.eventappfrontend.R;
 import com.jeneric.eventappfrontend.model.EventModel;
+import com.jeneric.eventappfrontend.model.TimeConvertor;
 import com.jeneric.eventappfrontend.ui.create.dialogues.TimePickerFragment;
 
 public class CreateFragmentClickHandlers {
 
     EventModel eventModel;
+    TimeConvertor timeConvertor;
     NavController navController;
     Context context;
 
-    public CreateFragmentClickHandlers(NavController navController, Context context, EventModel eventModel) {
+    public CreateFragmentClickHandlers(NavController navController, Context context, EventModel eventModel, TimeConvertor timeConvertor) {
         this.navController = navController;
         this.context = context;
         this.eventModel = eventModel;
+        this.timeConvertor = timeConvertor;
     }
 
     public void onTimeFieldClicked(View view) {
@@ -46,10 +49,21 @@ public class CreateFragmentClickHandlers {
                     eventModel.getEndDate(),
                     eventModel.getEndTime()
             );
+//            timeConvertor.getStartYear();
 
             //TODO: Call method to save album
             CreateFragmentDirections.ActionCreateFragmentToSubmitDialogueFragment action = CreateFragmentDirections.actionCreateFragmentToSubmitDialogueFragment(
-                    event.getEventTitle());
+                    event.getEventTitle(),
+                    timeConvertor.getStartYear(),
+                    timeConvertor.getStartMonth(),
+                    timeConvertor.getStartDay(),
+                    timeConvertor.getStartHour(),
+                    timeConvertor.getStartMinute(),
+                    timeConvertor.getEndYear(),
+                    timeConvertor.getEndMonth(),
+                    timeConvertor.getEndDay(),
+                    timeConvertor.getEndHour(),
+                    timeConvertor.getEndMinute());
             navController.navigate(action);
         }
     }

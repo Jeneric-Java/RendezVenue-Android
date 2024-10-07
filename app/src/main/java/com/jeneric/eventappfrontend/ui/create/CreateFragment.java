@@ -22,7 +22,7 @@ import com.jeneric.eventappfrontend.ui.create.dialogues.DateTimePickerListener;
 import com.jeneric.eventappfrontend.ui.main.MainActivity;
 
 
-public class CreateFragment extends Fragment implements DateTimePickerListener {
+public class CreateFragment extends Fragment {
 
     private Context context;
     private EventModel event;
@@ -36,6 +36,9 @@ public class CreateFragment extends Fragment implements DateTimePickerListener {
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         this.context = context;
+        if (context instanceof MainActivity) {
+            this.timeConvertor = ((MainActivity) context).getTimeConvertor();
+        }
     }
 
     NavController navController;
@@ -54,26 +57,8 @@ public class CreateFragment extends Fragment implements DateTimePickerListener {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         event = new EventModel();
-        binding.setClickHandler(new CreateFragmentClickHandlers(navController, context, event));
+        binding.setClickHandler(new CreateFragmentClickHandlers(navController, context, event, timeConvertor));
         binding.setEvent(event);
     }
 
-    @Override
-    public void onStartDateSelected(int year, int month, int day) {
-        timeConvertor.setStartYear(year);
-        timeConvertor.setStartMonth(month);
-        timeConvertor.setStartDay(day);
-    }
-
-    @Override
-    public void onStartTimeSelected(int hour, int minute) {
-        timeConvertor.setStartHour(hour);
-        timeConvertor.setStartMinute(minute);
-    }
-
-    @Override
-    public void onEndTimeSelected(int hour, int minute) {
-        timeConvertor.setEndHour(hour);
-        timeConvertor.setEndMinute(minute);
-    }
 }
