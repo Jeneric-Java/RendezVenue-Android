@@ -18,6 +18,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import com.jeneric.eventappfrontend.R;
 import com.jeneric.eventappfrontend.adapters.EventAdapter;
@@ -26,6 +27,7 @@ import com.jeneric.eventappfrontend.model.EventModel;
 import com.jeneric.eventappfrontend.ui.main.MainActivityViewModel;
 import com.jeneric.eventappfrontend.ui.main.RecyclerViewInterface;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -61,7 +63,24 @@ public class ExploreFragment extends Fragment implements RecyclerViewInterface{
 
         viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
 
+        eventList = new ArrayList<>();
+        filteredEventList = new ArrayList<>();
+
         getAllEvents();
+
+        searchView = binding.searchBar;
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                filterSearch(newText);
+                return false;
+            }
+        });
 
         Bundle bundle = getArguments();
         if (bundle != null) {
@@ -135,8 +154,24 @@ public class ExploreFragment extends Fragment implements RecyclerViewInterface{
 //        }
     }
 
+    private void filterSearch(String newText) {
+        newText = newText.toLowerCase();
+        filteredEventList = new ArrayList<>();
+        for (EventModel event : eventList) {
+            if (event.getTitle().toLowerCase().contains(newText)
+                    || event.getType().toLowerCase().contains(newText)) {
+                filteredEventList.add(event);
+            }
+        }
+        if (filteredEventList.isEmpty() && !newText.isBlank()) {
+            Toast.makeText(context, "No event found", Toast.LENGTH_SHORT).show();
+        } else {
+            adapter.setFilteredList(filteredEventList);
+        }
+    }
     @Override
     public void onItemClick(int position) {
-        navController.navigate(R.id.action_exploreFragment_to_eventDetailsFragment);
+        EventModel selectedEvent = filteredEventList.isEmpty() ? eventList.get(position) : filteredEventList.get(position);
+        navController.navigate(ExploreFragmentDirections.actionExploreFragmentToEventDetailsFragment(selectedEvent));
     }
 }

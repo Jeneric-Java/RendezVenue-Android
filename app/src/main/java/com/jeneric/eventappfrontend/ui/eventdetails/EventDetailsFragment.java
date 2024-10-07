@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,8 +29,10 @@ public class EventDetailsFragment extends Fragment {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_eventdetails, container, false);
         if (getArguments() != null) {
             event = EventDetailsFragmentArgs.fromBundle(getArguments()).getEvent();
+
             binding.setEvent(event);
         }
+
         return binding.getRoot();
     }
 }

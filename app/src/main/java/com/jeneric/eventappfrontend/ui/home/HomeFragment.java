@@ -74,8 +74,9 @@ public class HomeFragment extends Fragment {
 
 
     private void loadUserEvents() {
-        userEventList.add(new EventModel(1, "Event 1", " ", "location 1", "url", "misc", "9 Oct", "19.30pm"," ", " "));
-        userEventList.add(new EventModel(1, "Event 2", " ", "location 2", "url", "misc", "11 Oct", "9.00am"," ", " "));
+        userEventList.add(new EventModel(1, "Event 1", "This is the first event", "London", "www.google.com", "misc", "9 Oct", "19.30pm"," ", " "));
+        userEventList.add(new EventModel(1, "Event 2", "This is the second event", "Manchester", "www.github.com", "misc", "11 Oct", "9.00am"," ", " "));
+        userEventList.add(new EventModel(1, "Event 3", "This is the second event", "Manchester", "www.github.com", "misc", "11 Oct", "9.00am"," ", " "));
     }
 
 
@@ -93,10 +94,14 @@ public class HomeFragment extends Fragment {
                 TextView startDate = eventCard.findViewById(R.id.textview_event_date);
                 TextView startTime = eventCard.findViewById(R.id.textview_event_time);
 
-                title.setText(event.getEventTitle());
-                location.setText(event.getEventLocation());
+                title.setText(event.getTitle());
+                location.setText(event.getLocation());
                 startDate.setText(event.getStartDate());
                 startTime.setText(event.getStartTime());
+
+                eventCard.setOnClickListener(v -> {
+                    navController.navigate(HomeFragmentDirections.actionHomeFragmentToEventDetailsFragment(event));
+                });
 
                 eventContainer.addView(eventCard);
             }
