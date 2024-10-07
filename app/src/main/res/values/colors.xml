@@ -18,4 +18,6 @@
     <color name="tangBlue">#355ec0</color>
     <color name="grey">#6A6A6A</color>
     <color name="frenchGrey">#c7bcc7</color>
+
+    <color name="pickerBkg">#333333</color>
 </resources>

@@ -12,17 +12,17 @@
         <item name="android:spinnerStyle">@style/spinner.style</item>
         <item name="android:textColorPrimary">@color/whiteSmoke</item>
         <item name="cardViewStyle">@style/cardEventItem_style</item>
-        <item name="buttonBarPositiveButtonStyle">@style/DialogButtonStyle</item>
-        <item name="buttonBarNegativeButtonStyle">@style/DialogButtonStyle</item>
+<!--        <item name="android:buttonBarPositiveButtonStyle">@style/DialogButtonStyle</item>-->
+<!--        <item name="android:buttonBarNegativeButtonStyle">@style/DialogButtonStyle</item>-->
 
-        <item name="android:timePickerDialogTheme">@style/CustomPickerDialogTheme</item>
-        <item name="android:datePickerDialogTheme">@style/CustomPickerDialogTheme</item>
+<!--        <item name="android:timePickerDialogTheme">@style/CustomPickerDialogTheme.Dark</item>-->
+<!--        <item name="android:datePickerDialogTheme">@style/CustomPickerDialogTheme.Dark</item>-->
 
     </style>
 
     <style name="button.style" parent="Widget.AppCompat.Button">
         <item name="android:background">@drawable/button_shape</item>
-        <item name="backgroundTint">@color/tangBlue</item>
+        <item name="backgroundTint">@color/delftBlue</item>
         <item name="android:textColor">@color/whiteSmoke</item>
     </style>
 
@@ -62,20 +62,10 @@
 
 
 
-    <style name="CustomPickerDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <!-- Customize dialog button styles -->
-        <item name="buttonBarPositiveButtonStyle">@style/DialogButtonStyle</item>
-        <item name="buttonBarNegativeButtonStyle">@style/DialogButtonStyle</item>
-
-        <!-- Customize dialog title and text color -->
-        <item name="android:textColorPrimary">@color/whiteSmoke</item>
-        <item name="android:textColorSecondary">@color/whiteSmoke</item>
-    </style>
-
-
 
     <style name="DialogButtonStyle" parent="Widget.AppCompat.Button">
-        <item name="android:textColor">@color/whiteSmoke</item> <!-- Ensure the text is readable -->
+        <item name="android:textColor">@color/whiteSmoke</item>
+        <item name="android:textColorPrimary">@color/frenchGrey</item> <!-- Ensure the text is readable -->
     </style>
 
 </resources>
