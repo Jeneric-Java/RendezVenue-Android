@@ -11,6 +11,7 @@ import com.jeneric.eventappfrontend.R;
 import com.jeneric.eventappfrontend.model.EventModel;
 import com.jeneric.eventappfrontend.model.TimeConvertor;
 import com.jeneric.eventappfrontend.ui.create.dialogues.TimePickerFragment;
+import com.jeneric.eventappfrontend.ui.explore.ExploreFragmentViewModel;
 
 public class CreateFragmentClickHandlers {
 
@@ -19,11 +20,14 @@ public class CreateFragmentClickHandlers {
     NavController navController;
     Context context;
 
-    public CreateFragmentClickHandlers(NavController navController, Context context, EventModel eventModel, TimeConvertor timeConvertor) {
+    ExploreFragmentViewModel viewModel;
+
+    public CreateFragmentClickHandlers(NavController navController, Context context, EventModel eventModel, TimeConvertor timeConvertor, ExploreFragmentViewModel viewModel) {
         this.navController = navController;
         this.context = context;
         this.eventModel = eventModel;
         this.timeConvertor = timeConvertor;
+        this.viewModel = viewModel;
     }
 
     public void onTimeFieldClicked(View view) {
@@ -70,7 +74,10 @@ public class CreateFragmentClickHandlers {
                     timeConvertor.getEndMonth(),
                     timeConvertor.getEndDay(),
                     timeConvertor.getEndHour(),
-                    timeConvertor.getEndMinute());
+                    timeConvertor.getEndMinute()
+            );
+            viewModel.addNewEvent(event);
+
             navController.navigate(action);
         }
     }
