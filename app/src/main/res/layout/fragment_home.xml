@@ -1,21 +1,281 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" >
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".HomeFragment">
 
+    <data>
 
-<FrameLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+        <variable
+            name="clickhandlers"
+            type="com.jeneric.eventappfrontend.ui.home.HomeClickHandlers" />
+    </data>
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="HOME FRAGMENT" />
+        android:fillViewport="true"
+        android:paddingBottom="3dp">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".ui.home.HomeFragment">
 
-</FrameLayout>
+            <TextView
+                android:id="@+id/textView_yourUpcomingEvent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="193dp"
+                android:gravity="center"
+                android:text="@string/your_upcoming_event"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/home_event_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="10dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/textView_yourUpcomingEvent" />
+
+            <Button
+                android:id="@+id/home_search_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginVertical="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/searchview_shape"
+                android:drawableStart="@drawable/search_icon"
+                android:drawablePadding="8dp"
+                android:elevation="10dp"
+                android:gravity="start|center_vertical"
+                android:onClick="@{clickhandlers::onSearchBarClick}"
+                android:padding="12dp"
+                android:text="Search for event..."
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:theme="@style/SearchBarStyle"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_event_container" />
+
+            <TextView
+                android:id="@+id/home_eventCategories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="@string/events_categories"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_search_button" />
+
+            <FrameLayout
+                android:id="@+id/home_arts_theatre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="20dp"
+                android:layout_marginStart="23dp"
+                android:background="@drawable/img_shape"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/home_eventCategories">
+
+                <ImageView
+
+                    android:layout_width="170dp"
+                    android:layout_height="130dp"
+                    android:background="@drawable/img_shape"
+                    android:backgroundTint="#E6E1E1"
+                    android:clipToOutline="true"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/arts_theatre" />
+
+                <View
+                    android:layout_width="170dp"
+                    android:layout_height="130dp"
+                    android:background="@drawable/img_shape" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
+                    android:gravity="center"
+                    android:text="@string/arts_and_theatre"
+                    android:textColor="@color/whiteSmoke"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="63dp"
+                    tools:layout_editor_absoluteY="485dp" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/home_sports"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="20dp"
+                android:layout_marginStart="23dp"
+                android:background="@drawable/img_shape"
+                app:layout_constraintStart_toEndOf="@id/home_arts_theatre"
+                app:layout_constraintTop_toBottomOf="@+id/home_eventCategories">
+
+                <ImageView
+
+                    android:layout_width="170dp"
+                    android:layout_height="130dp"
+                    android:background="@drawable/img_shape"
+                    android:clipToOutline="true"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/sports" />
+
+                <View
+                    android:layout_width="170dp"
+                    android:layout_height="130dp"
+                    android:background="@drawable/img_shape" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
+                    android:fontFamily="@font/quicksand"
+                    android:gravity="center_horizontal"
+                    android:text="@string/sports"
+                    android:textColor="@color/whiteSmoke"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="63dp"
+                    tools:layout_editor_absoluteY="485dp" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/home_film"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="20dp"
+                android:layout_marginStart="23dp"
+                android:background="@drawable/img_shape"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/home_arts_theatre">
+
+                <ImageView
+
+                    android:layout_width="170dp"
+                    android:layout_height="130dp"
+                    android:background="@drawable/img_shape"
+                    android:clipToOutline="true"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/film" />
+
+                <View
+                    android:layout_width="170dp"
+                    android:layout_height="130dp"
+                    android:background="@drawable/img_shape" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
+                    android:fontFamily="@font/quicksand"
+                    android:gravity="center"
+                    android:text="@string/film"
+                    android:textColor="@color/whiteSmoke"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="63dp"
+                    tools:layout_editor_absoluteY="485dp" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/home_music"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="20dp"
+                android:layout_marginStart="23dp"
+                android:background="@drawable/img_shape"
+                app:layout_constraintLeft_toRightOf="@id/home_film"
+                app:layout_constraintTop_toBottomOf="@+id/home_sports">
+
+                <ImageView
+
+                    android:layout_width="170dp"
+                    android:layout_height="130dp"
+                    android:background="@drawable/img_shape"
+                    android:clipToOutline="true"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/music" />
+
+                <View
+                    android:layout_width="170dp"
+                    android:layout_height="130dp"
+                    android:background="@drawable/img_shape" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
+                    android:fontFamily="@font/quicksand"
+                    android:gravity="center"
+                    android:text="@string/music"
+                    android:textColor="@color/whiteSmoke"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="63dp"
+                    tools:layout_editor_absoluteY="485dp" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/home_misc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/img_shape"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/home_film">
+
+                <ImageView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:background="@drawable/img_shape"
+                    android:clipToOutline="true"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/misc" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:background="@drawable/img_shape" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
+                    android:fontFamily="@font/quicksand"
+                    android:gravity="center"
+                    android:text="@string/miscellaneous"
+                    android:textColor="@color/whiteSmoke"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="63dp"
+                    tools:layout_editor_absoluteY="485dp" />
+
+            </FrameLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>

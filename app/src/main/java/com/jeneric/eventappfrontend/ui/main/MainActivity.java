@@ -40,5 +40,25 @@ public class MainActivity extends AppCompatActivity {
         mainActivityClickHandlers = new MainActivityClickHandlers(this);
         binding.setClickHandler(mainActivityClickHandlers);
 
+//        this.handleBottomNavigationSelections(bottomNavigationView, navController);
+
     }
+
+//    void handleBottomNavigationSelections(BottomNavigationView bottomNavigationView, NavController navController) {
+//        bottomNavigationView.setOnItemSelectedListener(item -> {
+//            int itemId = item.getItemId();
+//
+//            if (itemId == R.id.homeFragment) {
+//                navController.navigate(R.id.homeFragment);
+//                return true;
+//            } else if (itemId == R.id.createFragment) {
+//                navController.navigate(R.id.createFragment);
+//                return true;
+//            } else if (itemId == R.id.exploreFragment) {
+//                navController.navigate(R.id.exploreFragment);
+//                return true;
+//            }
+//            return false;
+//        });
+//    }
 }

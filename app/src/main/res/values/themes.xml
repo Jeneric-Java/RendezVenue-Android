@@ -15,13 +15,13 @@
     </style>
 
     <style name="button.style" parent="Widget.AppCompat.Button">
-        <item name="android:background">@drawable/search_view_bg</item>
+        <item name="android:background">@drawable/button_shape</item>
         <item name="backgroundTint">@color/tangBlue</item>
         <item name="android:textColor">@color/whiteSmoke</item>
     </style>
 
     <style name="spinner.style" parent="Widget.AppCompat.Spinner">
-        <item name="android:background">@drawable/search_view_bg</item>
+        <item name="android:background">@drawable/button_shape</item>
         <item name="backgroundTint">@color/whiteSmoke</item>
         <item name="android:popupBackground">@drawable/spinner_shape</item>
     </style>
@@ -48,7 +48,7 @@
     </style>
 
     <style name="cardEventItem_style" parent="CardView">
-        <item name="cardBackgroundColor">#6D635A</item>
+        <item name="cardBackgroundColor">#C1C1C1</item>
     </style>
 
     <style name="Theme.EventAppFrontend" parent="Base.Theme.EventAppFrontend">
