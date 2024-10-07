@@ -13,15 +13,19 @@ import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.jeneric.eventappfrontend.R;
 import com.jeneric.eventappfrontend.databinding.ActivityMainBinding;
+import com.jeneric.eventappfrontend.model.TimeConvertor;
 import com.jeneric.eventappfrontend.ui.create.CreateFragment;
+import com.jeneric.eventappfrontend.ui.create.dialogues.DateTimePickerListener;
 import com.jeneric.eventappfrontend.ui.explore.ExploreFragment;
 import com.jeneric.eventappfrontend.ui.home.HomeFragment;
 import com.jeneric.eventappfrontend.ui.settings.SettingsFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements DateTimePickerListener {
 
     ActivityMainBinding binding;
     MainActivityClickHandlers mainActivityClickHandlers;
+
+    TimeConvertor timeConvertor = new TimeConvertor();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,4 +65,26 @@ public class MainActivity extends AppCompatActivity {
 //            return false;
 //        });
 //    }
+    public TimeConvertor getTimeConvertor() {
+        return timeConvertor;
+    }
+
+    @Override
+    public void onStartDateSelected(int year, int month, int day) {
+        timeConvertor.setStartYear(year);
+        timeConvertor.setStartMonth(month);
+        timeConvertor.setStartDay(day);
+    }
+
+    @Override
+    public void onStartTimeSelected(int hour, int minute) {
+        timeConvertor.setStartHour(hour);
+        timeConvertor.setStartMinute(minute);
+    }
+
+    @Override
+    public void onEndTimeSelected(int hour, int minute) {
+        timeConvertor.setEndHour(hour);
+        timeConvertor.setEndMinute(minute);
+    }
 }
