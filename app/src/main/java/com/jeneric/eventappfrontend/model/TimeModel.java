@@ -10,7 +10,7 @@ import androidx.databinding.Bindable;
 import com.google.gson.annotations.SerializedName;
 import com.jeneric.eventappfrontend.BR;
 
-public abstract class TimeModel extends BaseObservable  {
+public class TimeModel extends BaseObservable  {
 
     private int year;
 
