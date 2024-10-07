@@ -17,6 +17,8 @@ import androidx.navigation.Navigation;
 import com.jeneric.eventappfrontend.R;
 import com.jeneric.eventappfrontend.model.EventModel;
 
+import java.util.Calendar;
+
 public class SubmitDialogueFragment extends DialogFragment {
 
     Context context;
@@ -42,13 +44,34 @@ public class SubmitDialogueFragment extends DialogFragment {
                 SubmitDialogueFragmentArgs args = SubmitDialogueFragmentArgs.fromBundle(getArguments());
                 String eventTitle = args.getEventTitle();
 
+                int startYear = args.getStartYear();
+                int startMonth = args.getStartMonth();
+                int startDay = args.getStartDay();
+                int startHour = args.getStartHour();
+                int startMinute = args.getStartMinute();
+
+                int endYear = args.getEndYear();
+                int endMonth = args.getEndMonth();
+                int endDay = args.getEndDay();
+                int endHour = args.getEndHour();
+                int endMinute = args.getEndMinute();
+
+                Calendar startTime = Calendar.getInstance();
+                startTime.set(startYear,startMonth,startDay,startHour,startMinute,0);
+
+                Calendar endTime = Calendar.getInstance();
+                endTime.set(endYear,endMonth,endDay, endHour, endMinute, 0);
+
                 Intent intent = new Intent(Intent.ACTION_INSERT)
                         .setData(CalendarContract.Events.CONTENT_URI)
                         .putExtra(CalendarContract.Events.TITLE, eventTitle)
                         .putExtra(CalendarContract.Events.DESCRIPTION, "Test")
-                        .putExtra(CalendarContract.Events.EVENT_LOCATION, "Test");
+                        .putExtra(CalendarContract.Events.EVENT_LOCATION, "Test")
+                        .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, startTime.getTimeInMillis())
+                        .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endTime.getTimeInMillis());
 
                 context.startActivity(intent);
+                navController.navigate(R.id.homeFragment);
             }
         });
         builder.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {

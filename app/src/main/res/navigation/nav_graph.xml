@@ -31,6 +31,9 @@
             android:id="@+id/action_createFragment_to_timePickerFragment"
             app:destination="@id/timePickerFragment" />
         <action
+            android:id="@+id/action_createFragment_to_endTimePickerFragment"
+            app:destination="@+id/endTimePickerFragment" />
+        <action
             android:id="@+id/action_createFragment_to_datePickerFragment"
             app:destination="@id/datePickerFragment" />
         <action
@@ -61,6 +64,10 @@
         android:name="com.jeneric.eventappfrontend.ui.create.dialogues.TimePickerFragment"
         android:label="TimePickerFragment" />
     <dialog
+        android:id="@+id/endTimePickerFragment"
+        android:name="com.jeneric.eventappfrontend.ui.create.dialogues.EndTimePickerFragment"
+        android:label="EndTimePickerFragment" />
+    <dialog
         android:id="@+id/datePickerFragment"
         android:name="com.jeneric.eventappfrontend.ui.create.dialogues.DatePickerFragment"
         android:label="DatePickerFragment" />
@@ -68,8 +75,40 @@
         android:id="@+id/submitDialogueFragment"
         android:name="com.jeneric.eventappfrontend.ui.create.dialogues.SubmitDialogueFragment"
         android:label="SubmitDialogueFragment" >
-    <argument
-        android:name="eventTitle"
-        app:argType="string" />
+        <argument
+            android:name="eventTitle"
+            app:argType="string" />
+
+        <argument
+            android:name="startYear"
+            app:argType="integer" />
+        <argument
+            android:name="startMonth"
+            app:argType="integer" />
+        <argument
+            android:name="startDay"
+            app:argType="integer" />
+        <argument
+            android:name="startHour"
+            app:argType="integer" />
+        <argument
+            android:name="startMinute"
+            app:argType="integer" />
+
+        <argument
+            android:name="endYear"
+            app:argType="integer" />
+        <argument
+            android:name="endMonth"
+            app:argType="integer" />
+        <argument
+            android:name="endDay"
+            app:argType="integer" />
+        <argument
+            android:name="endHour"
+            app:argType="integer" />
+        <argument
+            android:name="endMinute"
+            app:argType="integer" />
     </dialog>
 </navigation>

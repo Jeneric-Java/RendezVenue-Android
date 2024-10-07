@@ -1,11 +1,12 @@
 package com.jeneric.eventappfrontend.ui.create.dialogues;
 
-import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.widget.DatePicker;
+import android.text.format.DateFormat;
 import android.widget.EditText;
+import android.widget.TimePicker;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,12 +15,11 @@ import androidx.fragment.app.DialogFragment;
 import com.jeneric.eventappfrontend.R;
 
 import java.util.Calendar;
-import java.util.Objects;
+import java.util.Locale;
 
-public class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
+public class EndTimePickerFragment extends DialogFragment implements TimePickerDialog.OnTimeSetListener {
 
     private DateTimePickerListener listener;
-
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -35,22 +35,21 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         final Calendar c = Calendar.getInstance();
-        int year = c.get(Calendar.YEAR);
-        int month = c.get(Calendar.MONTH);
-        int day = c.get(Calendar.DAY_OF_MONTH);
+        int hour = c.get(Calendar.HOUR_OF_DAY);
+        int minute = c.get(Calendar.MINUTE);
 
-
-        return new DatePickerDialog(requireContext(), this, year, month, day);
+        return new TimePickerDialog(getActivity(), this, hour, minute,
+                DateFormat.is24HourFormat(getActivity()));
     }
 
     @Override
-    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-        String stringDate = day + "/" + (month + 1) + "/" + year;
+    public void onTimeSet(TimePicker timePicker, int hour, int minute) {
+        String stringTime = String.format(Locale.UK ,"%02d:%02d", hour, minute);
         if (listener != null) {
-            listener.onStartDateSelected(year, month, day);
+            listener.onEndTimeSelected(hour, minute);
         }
-        EditText editText = requireActivity().findViewById(R.id.editTextDate);
-        editText.setText(stringDate);
+        EditText editText = requireActivity().findViewById(R.id.editTextEndTime);
+        editText.setText(stringTime);
 
         dismiss();
     }
