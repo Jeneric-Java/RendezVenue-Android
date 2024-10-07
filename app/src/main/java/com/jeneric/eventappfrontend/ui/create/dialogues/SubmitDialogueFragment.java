@@ -68,7 +68,7 @@ public class SubmitDialogueFragment extends DialogFragment {
                 Intent intent = new Intent(Intent.ACTION_INSERT)
                         .setData(CalendarContract.Events.CONTENT_URI)
                         .putExtra(CalendarContract.Events.TITLE, eventTitle)
-                        .putExtra(CalendarContract.Events.DESCRIPTION, eventDescription + eventType)
+                        .putExtra(CalendarContract.Events.DESCRIPTION, eventDescription + "\n" + eventType)
                         .putExtra(CalendarContract.Events.EVENT_LOCATION, eventLocation)
                         .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, startTime.getTimeInMillis())
                         .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endTime.getTimeInMillis());
