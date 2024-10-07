@@ -29,7 +29,7 @@
     <style name="spinner.style" parent="Widget.AppCompat.Spinner">
         <item name="android:background">@drawable/button_shape</item>
         <item name="backgroundTint">@color/jet</item>
-        <item name="android:popupBackground">@drawable/spinner_shape</item>
+        <item name="android:popupBackground">@drawable/spinner_shape_dark</item>
     </style>
 
     <style name="editText.style" parent="Widget.AppCompat.EditText">
