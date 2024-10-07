@@ -19,6 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.SearchView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.jeneric.eventappfrontend.R;
 import com.jeneric.eventappfrontend.databinding.FragmentHomeBinding;
 import com.jeneric.eventappfrontend.model.EventModel;
@@ -74,9 +75,9 @@ public class HomeFragment extends Fragment {
 
 
     private void loadUserEvents() {
-        userEventList.add(new EventModel(1, "Event 1", "This is the first event", "London", "www.google.com", "misc", "9 Oct", "19.30pm"," ", " "));
-        userEventList.add(new EventModel(1, "Event 2", "This is the second event", "Manchester", "www.github.com", "misc", "11 Oct", "9.00am"," ", " "));
-        userEventList.add(new EventModel(1, "Event 3", "This is the second event", "Manchester", "www.github.com", "misc", "11 Oct", "9.00am"," ", " "));
+        userEventList.add(new EventModel(1, "Event 1", "This is the first event", "London", "www.google.com", "misc", "9 Oct", "19.30pm"," ", " ", "https://images.immediate.co.uk/production/volatile/sites/10/2022/09/2048-1365-August-border-610a8e6.jpg?quality=90&webp=true&resize=940,627"));
+        userEventList.add(new EventModel(1, "Event 2", "This is the second event", "Manchester", "www.github.com", "misc", "11 Oct", "9.00am"," ", " ", ""));
+        userEventList.add(new EventModel(1, "Event 3", "This is the second event", "Manchester", "www.github.com", "misc", "11 Oct", "9.00am"," ", " ", ""));
     }
 
 
@@ -93,11 +94,19 @@ public class HomeFragment extends Fragment {
                 TextView location = eventCard.findViewById(R.id.textview_event_location);
                 TextView startDate = eventCard.findViewById(R.id.textview_event_date);
                 TextView startTime = eventCard.findViewById(R.id.textview_event_time);
+                ImageView imageView = eventCard.findViewById(R.id.event_img);
 
                 title.setText(event.getTitle());
                 location.setText(event.getLocation());
                 startDate.setText(event.getStartDate());
                 startTime.setText(event.getStartTime());
+                Glide.with(context)
+                        .load(event.getImageUrl())
+                        .placeholder(R.mipmap.img_placeholder_outdoor)
+                        .error(R.mipmap.img_placeholder)
+                        .into(imageView);
+
+
 
                 eventCard.setOnClickListener(v -> {
                     navController.navigate(HomeFragmentDirections.actionHomeFragmentToEventDetailsFragment(event));

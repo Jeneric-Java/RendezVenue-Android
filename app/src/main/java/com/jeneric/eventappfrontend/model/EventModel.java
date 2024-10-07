@@ -24,8 +24,9 @@ public class EventModel extends BaseObservable implements Parcelable {
     private String startTime;
     private String endDate;
     private String endTime;
+    private String imageUrl;
 
-    public EventModel(long id, String title, String description, String location, String url, String type, String startDate, String startTime, String endDate, String endTime) {
+    public EventModel(long id, String title, String description, String location, String url, String type, String startDate, String startTime, String endDate, String endTime, String imageUrl) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -36,6 +37,7 @@ public class EventModel extends BaseObservable implements Parcelable {
         this.startTime = startTime;
         this.endDate = endDate;
         this.endTime = endTime;
+        this.imageUrl = imageUrl;
     }
 
     public EventModel() {
@@ -165,6 +167,16 @@ public class EventModel extends BaseObservable implements Parcelable {
         notifyPropertyChanged(BR.endTime);
     }
 
+    @Bindable
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+        notifyPropertyChanged(BR.imageUrl);
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -182,6 +194,7 @@ public class EventModel extends BaseObservable implements Parcelable {
         dest.writeString(startTime);
         dest.writeString(endDate);
         dest.writeString(endTime);
+        dest.writeString(imageUrl);
     }
 
 }

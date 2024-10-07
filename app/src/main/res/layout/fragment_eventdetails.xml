@@ -24,7 +24,7 @@
             android:layout_height="220dp"
             android:elevation="@dimen/cardview_default_elevation"
             android:scaleType="centerCrop"
-            android:src="@mipmap/img_placeholder_indoor"
+            app:imageUrl="@{event.imageUrl}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
