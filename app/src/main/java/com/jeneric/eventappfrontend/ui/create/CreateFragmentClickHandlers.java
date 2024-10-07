@@ -31,16 +31,16 @@ public class CreateFragmentClickHandlers {
         navController.navigate(R.id.action_createFragment_to_datePickerFragment);
     }
     public void onSubmitButtonClicked(View view) {
-        if (eventModel.getEventTitle() == null) {
+        if (eventModel.getTitle() == null) {
             Toast.makeText(context, "Make sure all required Fields are filled", Toast.LENGTH_SHORT).show();
         } else {
             EventModel event = new EventModel(
                     eventModel.getId(),
-                    eventModel.getEventTitle(),
-                    eventModel.getEventDescription(),
-                    eventModel.getEventLocation(),
-                    eventModel.getEventURL(),
-                    eventModel.getEventType(),
+                    eventModel.getTitle(),
+                    eventModel.getDescription(),
+                    eventModel.getLocation(),
+                    eventModel.getUrl(),
+                    eventModel.getType(),
                     eventModel.getStartDate(),
                     eventModel.getStartTime(),
                     eventModel.getEndDate(),
@@ -49,7 +49,7 @@ public class CreateFragmentClickHandlers {
 
             //TODO: Call method to save album
             CreateFragmentDirections.ActionCreateFragmentToSubmitDialogueFragment action = CreateFragmentDirections.actionCreateFragmentToSubmitDialogueFragment(
-                    event.getEventTitle());
+                    event.getTitle());
             navController.navigate(action);
         }
     }
