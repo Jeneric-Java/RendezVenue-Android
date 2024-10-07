@@ -74,6 +74,10 @@ public class MainActivity extends AppCompatActivity implements DateTimePickerLis
         timeConvertor.setStartYear(year);
         timeConvertor.setStartMonth(month);
         timeConvertor.setStartDay(day);
+
+        timeConvertor.setEndYear(year);
+        timeConvertor.setEndMonth(month);
+        timeConvertor.setEndDay(day);
     }
 
     @Override

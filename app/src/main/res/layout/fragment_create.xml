@@ -132,7 +132,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="10dp"
-        android:hint="@string/end_time"/>
+        android:hint="@string/end_time"
+        android:clickable="false"
+        android:focusable="false"
+        android:cursorVisible="false"
+        android:onClick="@{clickHandler::onEndTimeFieldClicked}"/>
 
     <Button
         android:id="@+id/create_event_button"
