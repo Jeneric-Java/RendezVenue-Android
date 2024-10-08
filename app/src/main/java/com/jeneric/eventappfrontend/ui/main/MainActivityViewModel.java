@@ -46,5 +46,9 @@ public class MainActivityViewModel extends AndroidViewModel {
         userEventList.add(event);
     }
 
+    public void deleteEventFromUserList(EventModel event) {
+        userEventList.remove(event);
+    }
+
 
 }

@@ -67,4 +67,9 @@ public class EventDetailsClickHandler {
     public void onAddToUserEventClicked () {
         mainActivityViewModel.addEventToUserList(event);
     }
+
+    public void onRemoveEventButtonClicked() {
+        mainActivityViewModel.deleteEventFromUserList(event);
+        navController.navigateUp();
+    }
 }
