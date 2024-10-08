@@ -16,7 +16,8 @@
             android:textSize="20sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/category_title" />
+            tools:text="Category"
+            android:visibility="gone"/>
 
         <SearchView
             android:id="@+id/search_bar"
