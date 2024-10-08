@@ -18,6 +18,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jeneric.eventappfrontend.R;
@@ -31,7 +32,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ExploreFragment extends Fragment implements RecyclerViewInterface{
+public class ExploreFragment extends Fragment implements RecyclerViewInterface {
 
     private RecyclerView recyclerView;
     private Context context;
@@ -50,7 +51,7 @@ public class ExploreFragment extends Fragment implements RecyclerViewInterface{
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        this.context=context;
+        this.context = context;
     }
 
     @Override
@@ -66,8 +67,6 @@ public class ExploreFragment extends Fragment implements RecyclerViewInterface{
         eventList = new ArrayList<>();
         filteredEventList = new ArrayList<>();
 
-        getAllEvents();
-
         searchView = binding.searchBar;
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -82,12 +81,15 @@ public class ExploreFragment extends Fragment implements RecyclerViewInterface{
             }
         });
 
-        Bundle bundle = getArguments();
-        if (bundle != null) {
-            String category = bundle.getString("category");
-            if (category != null) {
-                displayEventsByCategory(category);
-            }
+        String category = getArguments() != null ? getArguments().getString("category") : "";
+
+        if (category != null && !category.isEmpty()) {
+            TextView categoryTitle = binding.exploreCategoryTitle;
+            categoryTitle.setText("Category: " + (category.equalsIgnoreCase("ART_THEATRE") ? "ARTS & THEATRE" : category) );
+            categoryTitle.setVisibility(View.VISIBLE);
+            getAllEventsByCategory(category);
+        } else {
+            getAllEvents();
         }
 
         return binding.getRoot();
@@ -99,13 +101,29 @@ public class ExploreFragment extends Fragment implements RecyclerViewInterface{
             public void onChanged(List<EventModel> eventsFromLiveData) {
                 if (eventsFromLiveData != null && !eventsFromLiveData.isEmpty()) {
                     eventList = eventsFromLiveData;
-                    Log.d("ExploreFragment", "Data received: " + eventList.toString()); // Log the data
                     displayInRecyclerView();
-                } else {
-                    Log.d("ExploreFragment", "No data received.");
                 }
             }
         });
+    }
+
+    private void getAllEventsByCategory(String category) {
+        viewModel.getAllEvents(geoHashEnc).observe(getViewLifecycleOwner(), new Observer<List<EventModel>>() {
+            @Override
+            public void onChanged(List<EventModel> eventsFromLiveData) {
+                if (eventsFromLiveData != null && !eventsFromLiveData.isEmpty()) {
+                    eventList.clear();
+                    for (EventModel event : eventsFromLiveData) {
+                        Log.d("ExploreFragment", "Event Type: " + event.getType());
+                        if (event.getType().equalsIgnoreCase(category)) {
+                            eventList.add(event);
+                        }
+                    }
+                    displayInRecyclerView();
+                }
+            }
+        });
+
     }
 
     private void displayInRecyclerView() {
@@ -116,42 +134,6 @@ public class ExploreFragment extends Fragment implements RecyclerViewInterface{
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
         adapter.notifyDataSetChanged();
-    }
-    private void displayEventsByCategory(String category) {
-//        if (!filteredEventList.isEmpty()) {
-//            for (int i = 0; i < Math.min(filteredEventList.size(), 2); i++) {
-//                EventModel event = filteredEventList.get(i);
-//
-//                View eventCard = LayoutInflater.from(context).inflate(R.layout.event_item, recyclerView, false);
-//
-//                TextView title = eventCard.findViewById(R.id.textview_event_title);
-//                TextView location = eventCard.findViewById(R.id.textview_event_location);
-//                TextView startDate = eventCard.findViewById(R.id.textview_event_date);
-//                TextView startTime = eventCard.findViewById(R.id.textview_event_time);
-//
-//                title.setText(event.getEventTitle());
-//                location.setText(event.getEventLocation());
-//                startDate.setText(event.getStartDate());
-//                startTime.setText(event.getStartTime());
-//
-//                recyclerView.addView(eventCard);
-//            }
-//        } else {
-//            View noEventCard = LayoutInflater.from(context).inflate(R.layout.no_event_item, recyclerView, false);
-//            recyclerView.addView((noEventCard));
-//        filteredEventList = new ArrayList<>();
-//
-//        for (EventModel event : eventList) {
-//            if (event.getEventType().equalsIgnoreCase(category)) {
-//                filteredEventList.add(event);
-//            }
-//        }
-//        if (filteredEventList.isEmpty()) {
-//            //add the no_event_item layout
-//        } else {
-////            adapter.setFilteredList(filteredEventList);
-//        }
-//        }
     }
 
     private void filterSearch(String newText) {
@@ -165,10 +147,11 @@ public class ExploreFragment extends Fragment implements RecyclerViewInterface{
         }
         if (filteredEventList.isEmpty() && !newText.isBlank()) {
             Toast.makeText(context, "No event found", Toast.LENGTH_SHORT).show();
-        } else {
+        } else if (!filteredEventList.isEmpty()) {
             adapter.setFilteredList(filteredEventList);
         }
     }
+
     @Override
     public void onItemClick(int position) {
         EventModel selectedEvent = filteredEventList.isEmpty() ? eventList.get(position) : filteredEventList.get(position);

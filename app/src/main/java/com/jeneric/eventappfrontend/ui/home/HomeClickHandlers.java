@@ -27,7 +27,6 @@ public class HomeClickHandlers {
     }
 
     public void onCategoryClick(String category) {
-        // Pass category as argument to the ExploreFragment
         Bundle bundle = new Bundle();
         bundle.putString("category", category);
         navController.navigate(R.id.action_homeFragment_to_exploreFragment, bundle);
