@@ -15,6 +15,7 @@
     <string name="start_time">Start Time</string>
     <string name="date">Date</string>
     <string name="location">Location</string>
+    <string name="postcode">Postcode</string>
     <string name="event_description">Event Description</string>
     <string name="event_name">Event Name</string>
     <string name="add_event_to_cal">Add Event to your Calendar?</string>
@@ -35,5 +36,26 @@
         <item>Sports</item>
         <item>Music</item>
         <item>Film</item>
+    </string-array>
+
+    <string-array name="closest_city_list">
+        <item>Belfast</item>
+        <item>Birmingham</item>
+        <item>Bristol</item>
+        <item>Cardiff</item>
+        <item>Dublin</item>
+        <item>Edinburgh</item>
+        <item>Glasgow</item>
+        <item>Gloucester</item>
+        <item>Hull</item>
+        <item>Inverness</item>
+        <item>Leeds</item>
+        <item>Liverpool</item>
+        <item>London</item>
+        <item>Manchester</item>
+        <item>Newcastle-Upon-Tyne</item>
+        <item>Norwich</item>
+        <item>Southampton</item>
+        <item>Swansea</item>
     </string-array>
 </resources>
