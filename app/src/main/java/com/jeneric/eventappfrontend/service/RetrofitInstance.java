@@ -9,11 +9,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitInstance {
     private static Retrofit retrofit = null;
-//    private static final String BASE_URL = "http://10.0.2.2:8080/api/";
 
-    // private final static String BASE_URL = "http://10.0.2.2:8080/api/"; // if running from simulated device within Android Studio
+     private final static String BASE_URL = "http://10.0.2.2:8080/api/"; // if running from simulated device within Android Studio
 
-    private final static String BASE_URL = "http://192.168.1.34:8080/api/"; // if running from real device (IP address to PC-hosted API may change)
+//    private final static String BASE_URL = "http://192.168.1.34:8080/api/"; // if running from real device (IP address to PC-hosted API may change)
 
     public static EventApiService getService() {
 
