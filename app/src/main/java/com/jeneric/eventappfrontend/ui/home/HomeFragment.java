@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
@@ -23,6 +24,7 @@ import com.bumptech.glide.Glide;
 import com.jeneric.eventappfrontend.R;
 import com.jeneric.eventappfrontend.databinding.FragmentHomeBinding;
 import com.jeneric.eventappfrontend.model.EventModel;
+import com.jeneric.eventappfrontend.ui.main.MainActivityViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,9 +33,10 @@ import java.util.List;
 public class HomeFragment extends Fragment {
 
     private LinearLayout eventContainer;
-    private List<EventModel> userEventList = new ArrayList<>();
+    private List<EventModel> userEventsList;
     private FragmentHomeBinding binding;
     private NavController navController;
+    private MainActivityViewModel mainActivityViewModel;
 
 
 
@@ -53,15 +56,16 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false);
 
-        // init NavController
+
         navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container);
 
-        // Setup event container and other init
+
         eventContainer = binding.homeEventContainer;
-        loadUserEvents();
+        mainActivityViewModel = new ViewModelProvider(requireActivity()).get(MainActivityViewModel.class);
+        userEventsList = mainActivityViewModel.getUserEventList();
         displayUserEvents();
 
         return binding.getRoot();
@@ -73,20 +77,12 @@ public class HomeFragment extends Fragment {
         binding.setClickhandlers(new HomeClickHandlers(navController, context));
     }
 
-
-    private void loadUserEvents() {
-        userEventList.add(new EventModel(1, "Event 1", "This is the first event", "London", "www.google.com", "misc", "9 Oct", "19.30pm"," ", " ", "https://images.immediate.co.uk/production/volatile/sites/10/2022/09/2048-1365-August-border-610a8e6.jpg?quality=90&webp=true&resize=940,627"));
-        userEventList.add(new EventModel(1, "Event 2", "This is the second event", "Manchester", "www.github.com", "misc", "11 Oct", "9.00am"," ", " ", ""));
-        userEventList.add(new EventModel(1, "Event 3", "This is the second event", "Manchester", "www.github.com", "misc", "11 Oct", "9.00am"," ", " ", ""));
-    }
-
-
     private void displayUserEvents() {
         eventContainer.removeAllViews();
 
-        if(!userEventList.isEmpty()) {
-            for(int i = 0; i < Math.min(userEventList.size(), 2); i++) {
-                EventModel event = userEventList.get(i);
+        if(!userEventsList.isEmpty()) {
+            for(int i = 0; i < Math.min(userEventsList.size(), 2); i++) {
+                EventModel event = userEventsList.get(i);
 
                 View eventCard = LayoutInflater.from(context).inflate(R.layout.event_item, eventContainer, false);
 
@@ -106,13 +102,11 @@ public class HomeFragment extends Fragment {
                         .error(R.mipmap.img_placeholder)
                         .into(imageView);
 
-
+                eventContainer.addView(eventCard);
 
                 eventCard.setOnClickListener(v -> {
                     navController.navigate(HomeFragmentDirections.actionHomeFragmentToEventDetailsFragment(event));
                 });
-
-                eventContainer.addView(eventCard);
             }
         }
         else {

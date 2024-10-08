@@ -55,8 +55,8 @@ public class CreateFragment extends Fragment {
          binding = DataBindingUtil.inflate(inflater, R.layout.fragment_create, container, false);
          navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container);
 
-         viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
-        return binding.getRoot();
+         viewModel = new ViewModelProvider(requireActivity()).get(MainActivityViewModel.class);
+         return binding.getRoot();
     }
 
     @Override

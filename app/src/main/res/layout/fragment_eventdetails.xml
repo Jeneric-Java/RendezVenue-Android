@@ -204,8 +204,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/eventdetails_description"
             app:layout_constraintVertical_bias="1.0"
-            android:onClick="@{clickHandler::onAddToCalClicked}" />
-
+            android:onClick="@{clickHandler::onButtonClick}" />
+`
         <Button
             android:id="@+id/eventdetails_button_removeevent"
             android:layout_width="0dp"
