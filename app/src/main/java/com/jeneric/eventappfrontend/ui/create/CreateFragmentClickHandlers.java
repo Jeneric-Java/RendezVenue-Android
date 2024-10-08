@@ -75,8 +75,8 @@ public class CreateFragmentClickHandlers {
                     timeConvertor.getEndHour(),
                     timeConvertor.getEndMinute()
             );
+            viewModel.addEventToUserList(event);
             viewModel.addNewEvent(event);
-
             navController.navigate(action);
         }
     }

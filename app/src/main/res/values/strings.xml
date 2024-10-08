@@ -27,7 +27,7 @@
     <string name="music">Music</string>
     <string name="miscellaneous">Miscellaneous</string>
     <string name="events_categories">Browse by categories</string>
-    <string name="no_event_available_yet">No event available yet</string>
+    <string name="no_event_added_yet">No event added yet</string>
 
     <string-array name="event_type_list">
         <item>Arts &amp; Theatre</item>

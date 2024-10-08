@@ -53,9 +53,9 @@
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginVertical="10dp"
                 android:orientation="vertical"
-                app:layout_constraintTop_toBottomOf="@id/textView_yourUpcomingEvent"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"/>
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_yourUpcomingEvent" />
 
             <Button
                 android:id="@+id/home_search_button"
@@ -102,13 +102,12 @@
                 app:layout_constraintTop_toBottomOf="@+id/home_eventCategories">
 
                 <ImageView
-
                     android:layout_width="170dp"
                     android:layout_height="130dp"
                     android:background="@drawable/img_shape"
                     android:backgroundTint="#E6E1E1"
                     android:clipToOutline="true"
-                    android:onClick="@{() -> clickhandlers.onCategoryClick(@string/arts_and_theatre)}"
+                    android:onClick="@{() -> clickhandlers.onCategoryClick(`ART_THEATRE`)}"
                     android:scaleType="centerCrop"
                     android:src="@mipmap/arts_theatre" />
 
@@ -147,7 +146,7 @@
                     android:layout_height="130dp"
                     android:background="@drawable/img_shape"
                     android:clipToOutline="true"
-                    android:onClick="@{() -> clickhandlers.onCategoryClick(@string/sports)}"
+                    android:onClick="@{() -> clickhandlers.onCategoryClick(`SPORT`)}"
                     android:scaleType="centerCrop"
                     android:src="@mipmap/sports" />
 
@@ -187,7 +186,7 @@
                     android:layout_height="130dp"
                     android:background="@drawable/img_shape"
                     android:clipToOutline="true"
-                    android:onClick="@{() -> clickhandlers.onCategoryClick(@string/film)}"
+                    android:onClick="@{() -> clickhandlers.onCategoryClick(`FILM`)}"
                     android:scaleType="centerCrop"
                     android:src="@mipmap/film" />
 
@@ -227,7 +226,7 @@
                     android:layout_height="130dp"
                     android:background="@drawable/img_shape"
                     android:clipToOutline="true"
-                    android:onClick="@{() -> clickhandlers.onCategoryClick(@string/music)}"
+                    android:onClick="@{() -> clickhandlers.onCategoryClick(`MUSIC`)}"
                     android:scaleType="centerCrop"
                     android:src="@mipmap/music" />
 
@@ -269,7 +268,7 @@
                     android:layout_height="130dp"
                     android:background="@drawable/img_shape"
                     android:clipToOutline="true"
-                    android:onClick="@{() -> clickhandlers.onCategoryClick(@string/miscellaneous)}"
+                    android:onClick="@{() -> clickhandlers.onCategoryClick(`MISC`)}"
                     android:scaleType="centerCrop"
                     android:src="@mipmap/misc" />
 

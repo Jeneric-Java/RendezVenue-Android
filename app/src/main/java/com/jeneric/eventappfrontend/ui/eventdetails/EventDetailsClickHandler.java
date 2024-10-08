@@ -9,6 +9,7 @@ import androidx.navigation.NavController;
 
 import com.jeneric.eventappfrontend.R;
 import com.jeneric.eventappfrontend.model.EventModel;
+import com.jeneric.eventappfrontend.ui.main.MainActivityViewModel;
 
 import java.util.Calendar;
 
@@ -16,13 +17,20 @@ public class EventDetailsClickHandler {
 
     Context context;
     EventModel event;
-
+    MainActivityViewModel mainActivityViewModel;
     NavController navController;
 
-    public EventDetailsClickHandler(NavController navController, Context context, EventModel event) {
+    public EventDetailsClickHandler(NavController navController, Context context, EventModel event, MainActivityViewModel mainActivityViewModel) {
         this.navController = navController;
         this.context = context;
         this.event = event;
+        this.mainActivityViewModel = mainActivityViewModel;
+    }
+
+    public void onButtonClick(View view) {
+        onAddToCalClicked(view);
+        onAddToUserEventClicked();
+        navController.navigate(R.id.action_eventDetailsFragment_to_homeFragment);
     }
 
     public void onAddToCalClicked(View view) {
@@ -53,6 +61,15 @@ public class EventDetailsClickHandler {
                 .putExtra(CalendarContract.Events.EVENT_LOCATION, event.getLocation());
 
         context.startActivity(intent);
-        navController.navigate(R.id.action_eventDetailsFragment_to_homeFragment);
+
+    }
+
+    public void onAddToUserEventClicked () {
+        mainActivityViewModel.addEventToUserList(event);
+    }
+
+    public void onRemoveEventButtonClicked() {
+        mainActivityViewModel.deleteEventFromUserList(event);
+        navController.navigateUp();
     }
 }

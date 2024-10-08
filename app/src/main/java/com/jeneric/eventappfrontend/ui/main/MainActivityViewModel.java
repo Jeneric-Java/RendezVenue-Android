@@ -9,10 +9,12 @@ import androidx.lifecycle.LiveData;
 import com.jeneric.eventappfrontend.model.EventModel;
 import com.jeneric.eventappfrontend.repository.EventRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivityViewModel extends AndroidViewModel {
     EventRepository eventRepository;
+    private List<EventModel> userEventList = new ArrayList<>();
 
 
     public MainActivityViewModel(@NonNull Application application) {
@@ -33,6 +35,20 @@ public class MainActivityViewModel extends AndroidViewModel {
     }
 
     public void deleteEvent(long id) {
-        eventRepository.deleteAlbum(id);
+        eventRepository.deleteEvent(id);
     }
+
+    public List<EventModel> getUserEventList() {
+        return userEventList;
+    }
+
+    public void addEventToUserList(EventModel event) {
+        userEventList.add(event);
+    }
+
+    public void deleteEventFromUserList(EventModel event) {
+        userEventList.remove(event);
+    }
+
+
 }

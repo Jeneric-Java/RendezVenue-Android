@@ -89,7 +89,7 @@ public class EventRepository {
             }
         });
     }
-    public void deleteAlbum(long id) {
+    public void deleteEvent(long id) {
         EventApiService eventApiService = RetrofitInstance.getService();
         Call<ResponseBody> call = eventApiService.deleteEvent(id);
 
