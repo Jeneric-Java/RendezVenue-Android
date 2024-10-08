@@ -7,6 +7,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -32,6 +34,7 @@ public class EventDetailsFragment extends Fragment {
         super.onAttach(context);
         this.context = context;
     }
+    NavController navController;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,12 +45,12 @@ public class EventDetailsFragment extends Fragment {
 
             binding.setEvent(event);
         }
-
+        navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container);
         return binding.getRoot();
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        binding.setClickHandler(new EventDetailsClickHandler(context, event));
+        binding.setClickHandler(new EventDetailsClickHandler(navController, context, event));
     }
 }

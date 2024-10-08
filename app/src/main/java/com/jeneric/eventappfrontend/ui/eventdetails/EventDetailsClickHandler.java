@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.provider.CalendarContract;
 import android.view.View;
 
+import androidx.navigation.NavController;
+
+import com.jeneric.eventappfrontend.R;
 import com.jeneric.eventappfrontend.model.EventModel;
 
 import java.util.Calendar;
@@ -14,7 +17,10 @@ public class EventDetailsClickHandler {
     Context context;
     EventModel event;
 
-    public EventDetailsClickHandler(Context context, EventModel event) {
+    NavController navController;
+
+    public EventDetailsClickHandler(NavController navController, Context context, EventModel event) {
+        this.navController = navController;
         this.context = context;
         this.event = event;
     }
@@ -47,5 +53,6 @@ public class EventDetailsClickHandler {
                 .putExtra(CalendarContract.Events.EVENT_LOCATION, event.getLocation());
 
         context.startActivity(intent);
+        navController.navigate(R.id.action_eventDetailsFragment_to_homeFragment);
     }
 }
