@@ -171,9 +171,15 @@ public class MainActivity extends AppCompatActivity implements DateTimePickerLis
                                 String geoHashEnc = encryptUSL(location.getLatitude(), location.getLongitude());
                                 this.userLocation = geoHashEnc;
                                 Log.d("GPS Status", "Precise GPS Enabled");
-                            } catch (SecurityException | IllegalArgumentException | NoSuchPaddingException | InvalidAlgorithmParameterException | IllegalBlockSizeException | NoSuchAlgorithmException | InvalidKeySpecException | IOException | BadPaddingException | InvalidKeyException e) {
+                            } catch (AssertionError | SecurityException | IllegalArgumentException | NoSuchPaddingException | InvalidAlgorithmParameterException | IllegalBlockSizeException | NoSuchAlgorithmException | InvalidKeySpecException | IOException | BadPaddingException | InvalidKeyException e) {
                                 Log.d("AES Exception", e.toString());
                                 Log.d("GPS Status", "Precise GPS Failure");
+                            }
+                            try {
+                                String geoHashEnc = encryptUSL(53.4720116514883, -2.237826735345036);
+                                this.userLocation = geoHashEnc;
+                            } catch (SecurityException | IllegalArgumentException | NoSuchPaddingException | InvalidAlgorithmParameterException | IllegalBlockSizeException | NoSuchAlgorithmException | InvalidKeySpecException | IOException | BadPaddingException | InvalidKeyException e) {
+                                Log.d("GPS Status", "GPS Denied");
                             }
                         } else if (coarseLocationGranted != null && coarseLocationGranted) {
                             // Only approximate location access granted.
@@ -184,9 +190,15 @@ public class MainActivity extends AppCompatActivity implements DateTimePickerLis
                                 String geoHashEnc = encryptUSL(location.getLatitude(), location.getLongitude());
                                 this.userLocation = geoHashEnc;
                                 Log.d("GPS Status", "Approximate GPS Enabled");
-                            } catch (SecurityException | IllegalArgumentException | NoSuchPaddingException | InvalidAlgorithmParameterException | IllegalBlockSizeException | NoSuchAlgorithmException | InvalidKeySpecException | IOException | BadPaddingException | InvalidKeyException e) {
+                            } catch (AssertionError | SecurityException | IllegalArgumentException | NoSuchPaddingException | InvalidAlgorithmParameterException | IllegalBlockSizeException | NoSuchAlgorithmException | InvalidKeySpecException | IOException | BadPaddingException | InvalidKeyException e) {
                                 Log.d("AES Exception", e.toString());
                                 Log.d("GPS Status", "Approximate GPS Failed");
+                            }
+                            try {
+                                String geoHashEnc = encryptUSL(53.4720116514883, -2.237826735345036);
+                                this.userLocation = geoHashEnc;
+                            } catch (SecurityException | IllegalArgumentException | NoSuchPaddingException | InvalidAlgorithmParameterException | IllegalBlockSizeException | NoSuchAlgorithmException | InvalidKeySpecException | IOException | BadPaddingException | InvalidKeyException e) {
+                                Log.d("GPS Status", "GPS Denied");
                             }
                         } else {
                             // No location access granted.
