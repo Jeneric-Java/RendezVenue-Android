@@ -29,6 +29,8 @@
     <string name="miscellaneous">Miscellaneous</string>
     <string name="events_categories">Browse by categories</string>
     <string name="no_event_added_yet">No event added yet</string>
+    <string name="create_new_event">Create New Event</string>
+    <string name="event_url">Event URL</string>
 
     <string-array name="event_type_list">
         <item>Arts &amp; Theatre</item>

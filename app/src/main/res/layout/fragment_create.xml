@@ -20,7 +20,7 @@
         android:id="@+id/create_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/create_event_text"
+        android:text="@string/create_new_event"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -157,16 +157,33 @@
         android:onClick="@{clickHandler::onEndTimeFieldClicked}"
         android:text="@={event.endTime}"/>
 
+    <EditText
+        android:id="@+id/editEventUrl"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="@string/event_url"
+        tools:layout_editor_absoluteX="102dp"
+        tools:layout_editor_absoluteY="97dp"
+        app:layout_constraintTop_toBottomOf="@id/editTextEndTime"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        android:text="@={event.url}" />
+
+
+
     <Button
         android:id="@+id/create_event_button"
         android:layout_width="wrap_content"
         android:paddingHorizontal="25dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         android:text="@string/create_event_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEndTime"
+        app:layout_constraintTop_toBottomOf="@+id/editEventUrl"
         android:onClick="@{clickHandler::onSubmitButtonClicked}" />
 
 

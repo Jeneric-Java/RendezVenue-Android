@@ -39,7 +39,7 @@ public class CreateFragmentClickHandlers {
         navController.navigate(R.id.action_createFragment_to_datePickerFragment);
     }
     public void onSubmitButtonClicked(View view) {
-        if (eventModel.getTitle() == null) {
+        if (eventModel.getTitle() == null || eventModel.getDescription() == null || eventModel.getClosestCity() == null || eventModel.getLocation() == null || eventModel.getStartDate() == null || eventModel.getType() == null) {
             Toast.makeText(context, "Make sure all required Fields are filled", Toast.LENGTH_SHORT).show();
         } else {
             EventModel event = new EventModel(
