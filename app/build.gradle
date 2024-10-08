@@ -63,4 +63,7 @@ dependencies {
 
     // Feature module support for Fragments
     implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
+
+    // GeoHashing Utility
+    implementation(libs.geohash)
 }

@@ -3,16 +3,23 @@ package com.jeneric.eventappfrontend.service.location.encryption;
 
 import static android.text.Html.FROM_HTML_MODE_COMPACT;
 
+import android.content.Context;
 import android.os.Build;
+import android.os.Environment;
 import android.text.Html;
+import android.util.Log;
 
 import androidx.core.text.HtmlCompat;
+
+import com.jeneric.eventappfrontend.R;
+import com.jeneric.eventappfrontend.ui.main.MainActivity;
 
 import javax.crypto.*;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.SecretKeySpec;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
@@ -55,12 +62,21 @@ public class AESUtil {
         return keyGenerator.generateKey();
     }
 
-    public static SecretKey getKeyFromPassword()
-            throws NoSuchAlgorithmException, InvalidKeySpecException, IOException {
+//    public static SecretKey getKeyFromPassword()
+//            throws NoSuchAlgorithmException, InvalidKeySpecException, IOException {
+//
+//        List<String> tokens = getTokens();
+//        String password = tokens.get(0);
+//        String salt = tokens.get(1);
+//
+//        SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+//        KeySpec spec = new PBEKeySpec(password.toCharArray(), salt.getBytes(), 65536, 256);
+//        SecretKey secret = new SecretKeySpec(factory.generateSecret(spec)
+//                .getEncoded(), "AES");
+//        return secret;
+//    }
 
-        List<String> tokens = getTokens();
-        String password = tokens.get(0);
-        String salt = tokens.get(1);
+    public static SecretKey getKeyFromPassword(String password, String salt) throws NoSuchAlgorithmException, InvalidKeySpecException, IOException {
 
         SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
         KeySpec spec = new PBEKeySpec(password.toCharArray(), salt.getBytes(), 65536, 256);
@@ -93,21 +109,21 @@ public class AESUtil {
         return new IvParameterSpec(bytes);
     }
 
-    private static List<String> getTokens() throws IOException {
-
-        List<String> credentials = new ArrayList<>();
-
-        FileReader in = new FileReader("./src/main/res/password.txt");
-        BufferedReader br = new BufferedReader(in);
-
-        String line;
-        while ((line = br.readLine()) != null) {
-            credentials.add(line);
-        }
-        in.close();
-
-        return credentials;
-    }
+//    private static List<String> getTokens() throws IOException {
+//
+//        List<String> credentials = new ArrayList<>();
+//
+//        FileReader in = new FileReader("./src/main/res/password.txt");
+//        BufferedReader br = new BufferedReader(in);
+//
+//        String line;
+//        while ((line = br.readLine()) != null) {
+//            credentials.add(line);
+//        }
+//        in.close();
+//
+//        return credentials;
+//    }
 
     private static String escapeHTML(String s) {
         StringBuilder out = new StringBuilder(Math.max(16, s.length()));

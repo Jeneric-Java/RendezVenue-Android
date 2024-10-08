@@ -25,6 +25,7 @@ import com.jeneric.eventappfrontend.R;
 import com.jeneric.eventappfrontend.adapters.EventAdapter;
 import com.jeneric.eventappfrontend.databinding.FragmentExploreBinding;
 import com.jeneric.eventappfrontend.model.EventModel;
+import com.jeneric.eventappfrontend.ui.main.MainActivity;
 import com.jeneric.eventappfrontend.ui.main.MainActivityViewModel;
 import com.jeneric.eventappfrontend.ui.main.RecyclerViewInterface;
 
@@ -43,7 +44,9 @@ public class ExploreFragment extends Fragment implements RecyclerViewInterface {
     private List<EventModel> eventList;
     private List<EventModel> filteredEventList;
     private SearchView searchView;
-    private final String geoHashEnc = "hWYBaFlaw35f4WikCh0fMA==\n";
+//    private final String geoHashEnc = "hWYBaFlaw35f4WikCh0fMA==\n";
+
+    private String geoHashEnc;
 
     public ExploreFragment() {
     }
@@ -51,7 +54,10 @@ public class ExploreFragment extends Fragment implements RecyclerViewInterface {
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        this.context = context;
+        this.context=context;
+        if (context instanceof MainActivity) {
+            this.geoHashEnc = ((MainActivity) context).getUserLocation();
+        }
     }
 
     @Override

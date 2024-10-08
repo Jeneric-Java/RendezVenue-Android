@@ -64,6 +64,9 @@
         <action
             android:id="@+id/action_exploreFragment_to_eventDetailsFragment"
             app:destination="@id/eventDetailsFragment" />
+        <argument
+            android:name="geoHashEnc"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"

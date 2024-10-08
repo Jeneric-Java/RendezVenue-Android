@@ -1,3 +1,7 @@
 /build
 /src/main/res/iv.jpg
 /src/main/res/password.txt
+/src/main/java/com/jeneric/eventappfrontend/service/location/encryption/iv.jpg
+/src/main/java/com/jeneric/eventappfrontend/service/location/encryption/password.txt
+/src/main/assets/iv.jpg
+/src/main/assets/password.txt
