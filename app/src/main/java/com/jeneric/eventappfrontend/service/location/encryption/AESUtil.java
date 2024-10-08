@@ -62,20 +62,6 @@ public class AESUtil {
         return keyGenerator.generateKey();
     }
 
-//    public static SecretKey getKeyFromPassword()
-//            throws NoSuchAlgorithmException, InvalidKeySpecException, IOException {
-//
-//        List<String> tokens = getTokens();
-//        String password = tokens.get(0);
-//        String salt = tokens.get(1);
-//
-//        SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
-//        KeySpec spec = new PBEKeySpec(password.toCharArray(), salt.getBytes(), 65536, 256);
-//        SecretKey secret = new SecretKeySpec(factory.generateSecret(spec)
-//                .getEncoded(), "AES");
-//        return secret;
-//    }
-
     public static SecretKey getKeyFromPassword(String password, String salt) throws NoSuchAlgorithmException, InvalidKeySpecException, IOException {
 
         SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
@@ -108,22 +94,6 @@ public class AESUtil {
         byte[] bytes = Files.readAllBytes(file.toPath());
         return new IvParameterSpec(bytes);
     }
-
-//    private static List<String> getTokens() throws IOException {
-//
-//        List<String> credentials = new ArrayList<>();
-//
-//        FileReader in = new FileReader("./src/main/res/password.txt");
-//        BufferedReader br = new BufferedReader(in);
-//
-//        String line;
-//        while ((line = br.readLine()) != null) {
-//            credentials.add(line);
-//        }
-//        in.close();
-//
-//        return credentials;
-//    }
 
     private static String escapeHTML(String s) {
         StringBuilder out = new StringBuilder(Math.max(16, s.length()));

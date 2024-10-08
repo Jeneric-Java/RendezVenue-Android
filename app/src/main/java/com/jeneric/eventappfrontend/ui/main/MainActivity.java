@@ -1,7 +1,6 @@
 package com.jeneric.eventappfrontend.ui.main;
 
 import android.location.Location;
-import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,9 +8,6 @@ import android.util.Log;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
@@ -21,27 +17,16 @@ import com.jeneric.eventappfrontend.R;
 import com.jeneric.eventappfrontend.databinding.ActivityMainBinding;
 import com.jeneric.eventappfrontend.model.TimeConvertor;
 import com.jeneric.eventappfrontend.service.location.utilities.LocationParser;
-import com.jeneric.eventappfrontend.ui.create.CreateFragment;
-import com.jeneric.eventappfrontend.ui.create.CreateFragmentDirections;
 import com.jeneric.eventappfrontend.ui.create.dialogues.DateTimePickerListener;
-import com.jeneric.eventappfrontend.ui.explore.ExploreFragment;
-import com.jeneric.eventappfrontend.ui.home.HomeFragment;
-import com.jeneric.eventappfrontend.ui.settings.SettingsFragment;
 
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
@@ -140,11 +125,33 @@ public class MainActivity extends AppCompatActivity implements DateTimePickerLis
 
         String PSWString = new String(inputStreamPSW.readAllBytes(), StandardCharsets.UTF_8);
 
-        InputStream inputStreamIVPS = getAssets().open("iv.jpg");
+        InputStream inputStreamIVPS = getAssets().open("iv.txt");
 
-        IvParameterSpec ivParameterSpec = new IvParameterSpec(inputStreamIVPS.readAllBytes());
+        String IVPSString = new String(inputStreamIVPS.readAllBytes(), StandardCharsets.UTF_8);
 
-        return LocationParser.toGeoHashEnc(latitude, longitude, PSWString.substring(0, 25), PSWString.substring(25), ivParameterSpec);
+        String[] byteStrMat = IVPSString.split("\\x20");
+
+        byte[] iv = new byte[16];
+
+        for (int i = 0; i < byteStrMat.length; i++) {
+            iv[i] = Byte.parseByte(byteStrMat[i]);
+        }
+
+        IvParameterSpec ivParameterSpec = new IvParameterSpec(iv);
+
+        return LocationParser.toGeoHashEnc(latitude, longitude, PSWString.substring(0, 24), PSWString.substring(25), ivParameterSpec);
+
+
+//        -------------------------------------------------------HARDCODED-------------------------------------------------------------------
+//        byte[] hardcodedIV = { INSERT_BYTES_HERE };
+//
+//        IvParameterSpec ivParameterSpec = new IvParameterSpec(hardcodedIV);
+//        SecretKey key = AESUtil.getKeyFromPassword( INSERT_PASSWORD_HERE, INSERT_SALT_HERE);
+//
+//        return LocationParser.toGeoHashEnc(latitude, INSERT_PASSWORD_HERE, INSERT_SALT_HERE, ivParameterSpec);
+//        -------------------------------------------------------HARDCODED-------------------------------------------------------------------
+
+
     }
 
 

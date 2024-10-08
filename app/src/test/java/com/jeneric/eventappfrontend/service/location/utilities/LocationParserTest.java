@@ -28,16 +28,17 @@ public class LocationParserTest extends TestCase {
             throws NoSuchAlgorithmException, IllegalBlockSizeException, InvalidKeyException,
             BadPaddingException, InvalidAlgorithmParameterException, NoSuchPaddingException, InvalidKeySpecException, IOException {
 
-        String input = "gcqdsf542";
+        String input = "gcw2hzwzj"; // Manchester City Centre
 
-        SecretKey key = AESUtil.getKeyFromPassword();
-        IvParameterSpec iv = AESUtil.getIv();
+        SecretKey key = AESUtil.getKeyFromPassword( INSERT_PASSWORD_HERE , INSERT_SALT_HERE);
+        byte[] iv = { INSERT_BYTES_HERE };
+        IvParameterSpec ivParameterSpec = new IvParameterSpec(iv);
 
-        System.out.println(Arrays.toString(iv.getIV()));
+        String cipherText = AESUtil.encrypt(algorithm, input, key, ivParameterSpec, true);
 
-        String cipherText = AESUtil.encrypt(algorithm, input, key, iv, false);
-
+        // prints generated query parameter
         System.out.println(cipherText);
+
         String plainText = AESUtil.decrypt(algorithm, cipherText, key, iv);
 
         assertEquals(input, plainText);
@@ -55,14 +56,15 @@ public class LocationParserTest extends TestCase {
 //
 //		try (FileOutputStream outputStream = new FileOutputStream(file)) {
 //			outputStream.write(ivParameterSpec.getIV());
+//            outputStream.write(hardcodedIV);
 //		} catch (IOException e) {
 //			throw new RuntimeException(e);
 //		}
 //
-//		byte[] bytes = Files.readAllBytes(file.toPath());
+//    	byte[] bytes = Files.readAllBytes(file.toPath());
 //		System.out.println(Arrays.toString(new IvParameterSpec(bytes).getIV()));
 //
-//        assertEquals("test","test");
+//      assertEquals("test","test");
 //    }
 //    ---------------------------------------------------------------------------------------
 
