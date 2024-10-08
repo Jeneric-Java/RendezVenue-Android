@@ -49,6 +49,7 @@ public class CreateFragmentClickHandlers {
                     eventModel.getLocation(),
                     eventModel.getUrl(),
                     eventModel.getType(),
+                    eventModel.getClosestCity(),
                     eventModel.getStartDate(),
                     eventModel.getStartTime(),
                     eventModel.getEndDate(),

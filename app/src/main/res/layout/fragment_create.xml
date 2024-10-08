@@ -64,7 +64,7 @@
         android:layout_height="50dp"
         android:ems="10"
         android:inputType="text"
-        android:hint="@string/location"
+        android:hint="@string/postcode"
         tools:layout_editor_absoluteX="102dp"
         tools:layout_editor_absoluteY="97dp"
         app:layout_constraintTop_toBottomOf="@id/editDescriptionText"
@@ -74,10 +74,23 @@
         android:text="@={event.location}" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinnerClosestCity"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         app:layout_constraintTop_toBottomOf="@id/editLocationText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        android:entries="@array/closest_city_list"
+        app:spinnerSelectedValue="@={event.closestCity}"
+        android:prompt="@string/create_event_text"
+        />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@id/spinnerClosestCity"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="10dp"

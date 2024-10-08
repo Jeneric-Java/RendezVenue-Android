@@ -20,19 +20,21 @@ public class EventModel extends BaseObservable implements Parcelable {
     private String location;
     private String url;
     private String type;
+    private String closestCity;
     private String startDate;
     private String startTime;
     private String endDate;
     private String endTime;
     private String imageUrl;
 
-    public EventModel(long id, String title, String description, String location, String url, String type, String startDate, String startTime, String endDate, String endTime, String imageUrl) {
+    public EventModel(long id, String title, String description, String location, String url, String type, String closestCity, String startDate, String startTime, String endDate, String endTime, String imageUrl) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.location = location;
         this.url = url;
         this.type = type;
+        this.closestCity = closestCity;
         this.startDate = startDate;
         this.startTime = startTime;
         this.endDate = endDate;
@@ -50,6 +52,7 @@ public class EventModel extends BaseObservable implements Parcelable {
         location = in.readString();
         url = in.readString();
         type = in.readString();
+        closestCity = in.readString();
         startDate = in.readString();
         startTime = in.readString();
         endDate = in.readString();
@@ -128,6 +131,16 @@ public class EventModel extends BaseObservable implements Parcelable {
     }
 
     @Bindable
+    public String getClosestCity() {
+        return closestCity;
+    }
+
+    public void setClosestCity(String closestCity) {
+        this.closestCity = closestCity;
+        notifyPropertyChanged(BR.closestCity);
+    }
+
+    @Bindable
     public String getStartDate() {
         return startDate;
     }
@@ -190,6 +203,7 @@ public class EventModel extends BaseObservable implements Parcelable {
         dest.writeString(location);
         dest.writeString(url);
         dest.writeString(type);
+        dest.writeString(closestCity);
         dest.writeString(startDate);
         dest.writeString(startTime);
         dest.writeString(endDate);
