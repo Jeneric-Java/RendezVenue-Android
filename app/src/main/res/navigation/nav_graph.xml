@@ -67,6 +67,9 @@
         <argument
             android:name="event"
             app:argType="com.jeneric.eventappfrontend.model.EventModel" />
+        <action
+            android:id="@+id/action_eventDetailsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <dialog
         android:id="@+id/timePickerFragment"
