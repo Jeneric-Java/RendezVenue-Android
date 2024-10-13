@@ -43,7 +43,27 @@ research, and so incorporate new technologies thus enhancing their code. This ap
 
 ### Lifecycle & CI/CD
 
-We took the time early on to structure our CI/CD pipeline appropriately, to keep our working directories consistent, and the code clean, stable and well-tested throughout. By the guiding principles of Scrum/Agile methodologies, we kept communication fluid and the team informed and aligned. It gave us the time to continually reassess operational and technical feasibilities, and update the Kanban-style task-management system to reflect this.
+We were acutely constrained for time, so we introduced agile methodologies early on. Regular stand-ups kept the group informed and aligned, and was the source point for ticket creation within a Kanban-style workflow. Starting from a group Excalidraw, we were able to assess operational and technical feasibilities, relating to risks and legal considerations. It was during this research stage that we were able to distil our project aims down to a discrete set of clear, concise, and testable user stories. 
+
+We took the time to structure our CI/CD pipeline appropriately with a standardised set of instructions serving as the common point of reference for all team members. This not only encouraged us to keep our local work states consistent but helped guard against misuse, ensuring that privileged branches were free of unstable, broken or poorly-tested code.
+
+##### Our early sketch-ups
+
+_Flowcharts_
+
+![image](https://github.com/user-attachments/assets/30d7d0b7-24ce-4d91-88f7-d03ca96e015b)
+
+_UI Prototypes_
+
+![image](https://github.com/user-attachments/assets/c58b617d-8568-452f-82b2-d918178b7b8e)
+
+_First Ideas_
+
+![image](https://github.com/user-attachments/assets/07cc21eb-5f70-4e81-81f7-53abd38a81b5)
+
+_Preserving the Pipeline_
+
+![image](https://github.com/user-attachments/assets/bc09d774-4082-4adf-9f1e-2a8eab1f7c35)
 
 ## Security
 
