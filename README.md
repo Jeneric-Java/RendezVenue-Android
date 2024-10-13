@@ -45,7 +45,7 @@ research, and so incorporate new technologies thus enhancing their code. This ap
 
 We were acutely constrained for time, so we introduced agile methodologies early on. Regular stand-ups kept the group informed and aligned, and was the source point for ticket creation within a Kanban-style workflow. Starting from a group Excalidraw, we were able to assess operational and technical feasibilities, relating to risks and legal considerations. It was during this research stage that we were able to distil our project aims down to a discrete set of clear, concise, and testable user stories. 
 
-We took the time to structure our CI/CD pipeline appropriately with a standardised set of instructions serving as the common point of reference for all team members. This not only encouraged us to keep our local work states consistent but helped guard against misuse, ensuring that privileged branches were free of unstable, broken or poorly-tested code.
+We took the time to structure our CI/CD pipeline appropriately with a standardised set of instructions serving as the common point of reference for all team members. This not only encouraged us to keep our local work states consistent but helped guard against misuse, ensuring that privileged branches were free of unstable, broken or poorly-tested code. We produced most of our work inside of feature branches. These provisional working directories do not track a remote branch. This goes back to our earlier point about guarding against accidental pollution of the parent branches. 
 
 ##### Our early sketch-ups
 
