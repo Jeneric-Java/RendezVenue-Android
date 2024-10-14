@@ -30,6 +30,8 @@ This is the major section for all the things Jack and Joel did and the technolog
 
 We used Jetpack Navigation for it's robustness, allowing us to give a fluid user experience when navigating between sections of the app. Use of a NavController allowed for smoother navigation between various layers with multiple points of entry. Implementing a NavGraph gave us complete oversight to sensibly structure our navigation paths. It also allowed us to visualise how our data was being passed between fragments, relying on the SafeArgs dependency for inter-fragment type-safe navigation. We used Glide in our Android frontend to load and display images effectively. Once images are loaded, Glide also facilitates efficient image caching, allowing for a polished and stable user experience while browsing images.
 
+![Screenshot from 2024-10-14 20-03-09](https://github.com/user-attachments/assets/f2c6e815-cdf1-446e-9621-344b15444c67)
+
 Creating Dialog boxes to ensure that Date and Time fields were uniformly shaped to work with, not only the internal Calendar Provider API, but also our very own Spring Boot API backend. It was, in fact, through a combination of helper classes and the invocation of SafeArgs functions made available via the Jetpack Navigation libraries, that we found a solution, transforming the Date and Time fields accordingly. Adapting the app’s theme also proved more difficult than we had anticipated. The high level of thematic customisability was a mixed blessing; a stark reminder that with great power comes similarly great volumes of dispiritingly dense documentation.
 
 
