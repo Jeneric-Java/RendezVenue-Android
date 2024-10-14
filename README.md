@@ -67,8 +67,9 @@ _Preserving the Pipeline_
 
 ## Security
 
-All data relating to a user's location is encrypted for secure transmission. Jenerics Software puts the utmost priority on preserving the confidentiality and integrity of sensitive user-sourced credentials. 
-We rely on 256-bit AES encryption. 
+All data relating to a user's location is encrypted for secure transmission. Jenerics Software puts the utmost priority on preserving the confidentiality and integrity of sensitive user-sourced credentials. We rely on 256-bit AES encryption.
+
+For a more in-depth look at how RendezVenue manages end-to-end encryption, please visit our backend, which you can find [here](https://github.com/Jeneric-Java/RendezVenue-API). 
 
 ## FAQs
 
