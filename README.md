@@ -79,6 +79,7 @@ For a more in-depth look at how RendezVenue manages end-to-end encryption, pleas
 - Expand on the application themes with custom animations between fragments and a broader revision of stylistic choices not adhering to guidelines on accessibility.
 - Loading animation when awaiting a non-cached response to a new GET request, most importantly when a user changes location.
 - Dynamic path handling on denial of permissions to access the user's location.
+- Thorough sanitisation of user input to text fields.
 - Push notifications to remind users of their upcoming events; presently a user can do this via their own calendar.
 - GitHub Actions to automate end-of-pipeline testing and enforce rulesets on staging and production branches.
 
