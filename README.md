@@ -18,7 +18,17 @@ Do you prefer working with Outlook, TimeTree, or maybe even simply Google Calend
 RendezVenue boasts a slick UI experience, with automatic background location filtering kicking in from the get-go, granting instant access to events as far as the eye can see. Entrusting response caching and computationally-demanding processes 
 to the backend keeps the user experience uninterrupted. The frontend team have worked hard on embellishing the visuals with snappy graphics, elegantly designed, laid out, and all carefully chosen to complement the overarching theme.
 
-## User Manual
+## Table of Contents
+- [User Flow](#user-flow)
+- [Technologies/Features](#technologiesfeatures)
+- [A Real Team Effort](#a-real-team-effort)
+    - [Lifecycle & CI/CD](#lifecycle--cicd)
+- [Security](#security)
+- [Future Considerations](#future-considerations)
+- [FAQs](#faqs)
+- [Bugs and Contributions](#bugs-and-contributions)
+  
+## User Flow
 
 _This is where we will include screenshots of the fragments/activities to show the flow of the program.
 Alongside this will be a brief commentary to guide the user through operating the app._
@@ -103,6 +113,6 @@ Great question. For an empty string, about 40 bytes, I believe.
 
 ## Bugs and Contributions
 
-If you find any bugs, please create an issue on the issues page of this repo.
+If you find any bugs, please create an issue on the issues page of this repository.
 
 As this project is exclusive to the team at Jenerics Software, we don't plan on accepting any external contributions at this time.
