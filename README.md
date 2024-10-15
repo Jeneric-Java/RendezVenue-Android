@@ -40,7 +40,8 @@ This is the major section for all the things Jack and Joel did and the technolog
 
 We used Jetpack Navigation for it's robustness, allowing us to give a fluid user experience when navigating between sections of the app. Use of a NavController allowed for smoother navigation between various layers with multiple points of entry. Implementing a NavGraph gave us complete oversight to sensibly structure our navigation paths. It also allowed us to visualise how our data was being passed between fragments, relying on the SafeArgs dependency for inter-fragment type-safe navigation. 
 
-![Screenshot from 2024-10-14 20-03-09](https://github.com/user-attachments/assets/f2c6e815-cdf1-446e-9621-344b15444c67)
+![NavGraph_RV](https://github.com/user-attachments/assets/33c959bb-4a56-4719-9551-41de62f651c0)
+
 
 We used Glide in our Android frontend to load and display images effectively. Once images are loaded, Glide also facilitates efficient image caching, allowing for a polished and stable user experience while browsing images.
 
