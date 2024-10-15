@@ -47,6 +47,7 @@ Alongside this will be a brief commentary to guide the user through operating th
 
 ![home-fragment](https://github.com/user-attachments/assets/7a54dfe4-af62-4952-8dd5-1084915e2af5)
 
+![create new event](https://github.com/user-attachments/assets/e3a477c3-437f-4b43-b45e-7c1f6d8e2408)
 
 ## Technologies/Features
 
