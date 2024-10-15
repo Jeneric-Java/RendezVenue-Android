@@ -33,6 +33,9 @@ to the backend keeps the user experience uninterrupted. The frontend team have w
 _This is where we will include screenshots of the fragments/activities to show the flow of the program.
 Alongside this will be a brief commentary to guide the user through operating the app._
 
+![home-fragment](https://github.com/user-attachments/assets/7a54dfe4-af62-4952-8dd5-1084915e2af5)
+
+
 ## Technologies/Features
 
 _I will include some information here below from the website, but that is just for your reference - use it as you need. 
