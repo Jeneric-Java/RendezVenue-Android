@@ -105,4 +105,4 @@ Great question. For an empty string, about 40 bytes, I believe.
 
 If you find any bugs, please create an issue on the issues page of this repo.
 
-As this project is exclusive to the team at Jenerics Software, we don't plan on accepting any external contributions to the code at this time.
+As this project is exclusive to the team at Jenerics Software, we don't plan on accepting any external contributions at this time.
