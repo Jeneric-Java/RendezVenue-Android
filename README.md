@@ -69,9 +69,18 @@ _Preserving the Pipeline_
 
 ## Security
 
-All data relating to a user's location is encrypted for secure transmission. Jenerics Software puts the utmost priority on preserving the confidentiality and integrity of sensitive user-sourced credentials. We rely on 256-bit AES encryption.
+All data relating to a user's location is AES-256 encrypted for secure transmission. Jenerics Software puts the utmost priority on preserving the confidentiality and integrity of sensitive user-sourced credentials.
 
 For a more in-depth look at how RendezVenue manages end-to-end encryption, please visit our backend, which you can find [here](https://github.com/Jeneric-Java/RendezVenue-API). 
+
+## Future Considerations
+
+- Compatibility testing: pivoting from local to instrumented testing, assessing the application's performance across many devices and API levels.
+- Expand on the application themes with custom animations between fragments and a broader revision of stylistic choices not adhering to guidelines on accessibility.
+- Loading animation when awaiting a non-cached response to a new GET request, most importantly when a user changes location.
+- Dynamic path handling on denial of permissions to access the user's location.
+- Push notifications to remind users of their upcoming events; presently a user can do this via their own calendar.
+- GitHub Actions to automate end-of-pipeline testing and enforce rulesets on staging and production branches.
 
 ## FAQs
 
@@ -81,7 +90,7 @@ Our ethos centres on limiting over-reliance on external APIs. We rely solely on 
 
 **Where can I get RendezVenue?**
 
-This is a work in progress. Please be aware that some of the critical files, upon which this app is reliant for AES encryption, will not be made available with this release. 
+This is a work in progress. Please be aware that some of the critical files, upon which this app is reliant for encrypting traffic, will not be made available with this release. 
 
 **Is RendezVenue available in Kotlin?**
 
@@ -90,3 +99,9 @@ Not presently. This project was foremost an exercise in developing a full-stack 
 **How long is a piece of string?**
 
 Great question. For an empty string, about 40 bytes, I believe.
+
+## Bugs and Contributions
+
+If you find any bugs, please create an issue on the issues page of this repo.
+
+As this project is exclusive to the team at Jenerics Software, we don't plan on accepting any external contributions to the code at this time.
