@@ -1,5 +1,17 @@
 ![xxxhdpi-logobanner@4x (1)](https://github.com/user-attachments/assets/b37adab3-b856-41fe-a1e5-6a421ade2742)
 
+![Android Badge](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
+
+***
+
+![Java Badge](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=openjdk&logoColor=white)
+![Groovy Badge](https://img.shields.io/badge/Groovy-4298B8?style=for-the-badge&logo=apache-groovy&logoColor=white)
+![Jetpack Navigation Badge](https://img.shields.io/badge/Jetpack%20Navigation-4285F4?style=for-the-badge&logo=android&logoColor=white)
+![Retrofit Badge](https://img.shields.io/badge/Retrofit-007AFF?style=for-the-badge&logo=android&logoColor=white)
+![Glide Badge](https://img.shields.io/badge/Glide-88E0D0?style=for-the-badge&logo=android&logoColor=white)
+
+***
+
 # RendezVenue® by Jenerics Software  
 This is your new go-to app for retrieving, collecting, and curating events on the fly within an Android environment. RendezVenue simplifies the hassle of scouring event content with a targeted search functionality to get the events you want, 
 where and when you need them.
