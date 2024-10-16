@@ -8,23 +8,23 @@ import androidx.navigation.NavController;
 
 import com.jeneric.eventappfrontend.R;
 import com.jeneric.eventappfrontend.model.EventModel;
-import com.jeneric.eventappfrontend.model.TimeConvertor;
+import com.jeneric.eventappfrontend.model.TimeWizard;
 import com.jeneric.eventappfrontend.ui.main.MainActivityViewModel;
 
 public class CreateFragmentClickHandlers {
 
     EventModel eventModel;
-    TimeConvertor timeConvertor;
+    TimeWizard timeWizard;
     NavController navController;
     Context context;
 
     MainActivityViewModel viewModel;
 
-    public CreateFragmentClickHandlers(NavController navController, Context context, EventModel eventModel, TimeConvertor timeConvertor, MainActivityViewModel viewModel) {
+    public CreateFragmentClickHandlers(NavController navController, Context context, EventModel eventModel, TimeWizard timeWizard, MainActivityViewModel viewModel) {
         this.navController = navController;
         this.context = context;
         this.eventModel = eventModel;
-        this.timeConvertor = timeConvertor;
+        this.timeWizard = timeWizard;
         this.viewModel = viewModel;
     }
 
@@ -58,23 +58,22 @@ public class CreateFragmentClickHandlers {
             );
 //            timeConvertor.getStartYear();
 
-            //TODO: Call method to save album
             CreateFragmentDirections.ActionCreateFragmentToSubmitDialogueFragment action = CreateFragmentDirections.actionCreateFragmentToSubmitDialogueFragment(
                     event.getTitle(),
                     event.getDescription(),
                     event.getLocation(),
                     event.getType(),
 
-                    timeConvertor.getStartYear(),
-                    timeConvertor.getStartMonth(),
-                    timeConvertor.getStartDay(),
-                    timeConvertor.getStartHour(),
-                    timeConvertor.getStartMinute(),
-                    timeConvertor.getEndYear(),
-                    timeConvertor.getEndMonth(),
-                    timeConvertor.getEndDay(),
-                    timeConvertor.getEndHour(),
-                    timeConvertor.getEndMinute()
+                    timeWizard.getStartYear(),
+                    timeWizard.getStartMonth(),
+                    timeWizard.getStartDay(),
+                    timeWizard.getStartHour(),
+                    timeWizard.getStartMinute(),
+                    timeWizard.getEndYear(),
+                    timeWizard.getEndMonth(),
+                    timeWizard.getEndDay(),
+                    timeWizard.getEndHour(),
+                    timeWizard.getEndMinute()
             );
             viewModel.addEventToUserList(event);
             viewModel.addNewEvent(event);

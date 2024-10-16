@@ -42,7 +42,6 @@ public class HomeFragment extends Fragment {
 
     private Context context;
     public HomeFragment() {
-        // Required empty public constructor
     }
 
 
