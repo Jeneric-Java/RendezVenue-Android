@@ -50,7 +50,7 @@ The Home page features:
 
 <br>
 <br>
-<p align="center">
+<p align="left">
   <img src="https://github.com/user-attachments/assets/7a54dfe4-af62-4952-8dd5-1084915e2af5" width="350" />
 </p>
 <br>
@@ -59,8 +59,6 @@ _The RendezVenue Home page_
 
 <br>
 <br>
-
-
 
 The application allows users to search for events with a range of filtering options. Once an event is found clicking it will open up a more detailed view, allowing a user to add it to their calendar with ease.
 Creating events is also a breeze with our fillable form, utilising text fields, dropdown menus and picker dialogs to make the process as easy as possible for the user and robust input sanitisation for our API. Once an event is created a pop-up is displayed, asking the user if they wish to also add the event to their own calendar.
