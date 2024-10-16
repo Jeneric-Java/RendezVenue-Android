@@ -50,8 +50,9 @@ The Home page features:
 
 <br>
 <br>
-
-<img src="https://github.com/user-attachments/assets/7a54dfe4-af62-4952-8dd5-1084915e2af5" width="350" />
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7a54dfe4-af62-4952-8dd5-1084915e2af5" width="350" />
+</p>
 <br>
 
 _The RendezVenue Home page_
