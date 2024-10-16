@@ -42,24 +42,39 @@ to the backend keeps the user experience uninterrupted. The frontend team have w
   
 ## User Flow
 
-_This is where we will include screenshots of the fragments/activities to show the flow of the program.
-Alongside this will be a brief commentary to guide the user through operating the app._
+The application opens up to a carefully considered home page. The bottom menu bar acts as the main point of navigation within the app, with the top bar allowing users consistent access to their calendar throughout the app. 
+The Home page features: 
+- A section to display two Events saved by the user
+- A search bar, giving another point of access to the Explore page
+- A selection of buttons, providing quick access to Event listings filtered by the category of event
 
+<br>
+<br>
 
 <img src="https://github.com/user-attachments/assets/7a54dfe4-af62-4952-8dd5-1084915e2af5" width="350" />
+<br>
+
+_The RendezVenue Home page_
+
+<br>
+<br>
+
+
+
+The application allows users to search for events with a range of filtering options. Once an event is found clicking it will open up a more detailed view, allowing a user to add it to their calendar with ease.
+Creating events is also a breeze with our fillable form, utilising text fields, dropdown menus and picker dialogs to make the process as easy as possible for the user and robust input sanitisation for our API. Once an event is created a pop-up is displayed, asking the user if they wish to also add the event to their own calendar.
+
 <br>
 <br>
 
 <img src="https://github.com/user-attachments/assets/7f4407dc-8200-4181-815c-7403dc68099c" width="300" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://github.com/user-attachments/assets/1e05e6c8-6f79-43eb-8878-6a23fb0c035f" width="300" />
-
+<br>
+_Finding Events on RendezVenue_ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _Creating Events on RendezVenue_
 
 
 
 ## Technologies/Features
-
-_I will include some information here below from the website, but that is just for your reference - use it as you need. 
-This is the major section for all the things Jack and Joel did and the technologies you used so I leave it to you guys to decide how to structure._
 
 We used Jetpack Navigation for it's robustness, allowing us to give a fluid user experience when navigating between sections of the app. Use of a NavController allowed for smoother navigation between various layers with multiple points of entry. Implementing a NavGraph gave us complete oversight to sensibly structure our navigation paths. It also allowed us to visualise how our data was being passed between fragments, relying on the SafeArgs dependency for inter-fragment type-safe navigation. 
 
