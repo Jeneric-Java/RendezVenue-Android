@@ -45,9 +45,16 @@ to the backend keeps the user experience uninterrupted. The frontend team have w
 _This is where we will include screenshots of the fragments/activities to show the flow of the program.
 Alongside this will be a brief commentary to guide the user through operating the app._
 
-![home-fragment](https://github.com/user-attachments/assets/7a54dfe4-af62-4952-8dd5-1084915e2af5)
 
-![create new event](https://github.com/user-attachments/assets/e3a477c3-437f-4b43-b45e-7c1f6d8e2408)
+<img src="https://github.com/user-attachments/assets/7a54dfe4-af62-4952-8dd5-1084915e2af5" width="350" />
+<br>
+<br>
+
+<img src="https://github.com/user-attachments/assets/7f4407dc-8200-4181-815c-7403dc68099c" width="300" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/user-attachments/assets/1e05e6c8-6f79-43eb-8878-6a23fb0c035f" width="300" />
+
+
+
 
 ## Technologies/Features
 
