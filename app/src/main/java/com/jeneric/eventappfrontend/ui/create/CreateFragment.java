@@ -18,7 +18,7 @@ import android.view.ViewGroup;
 import com.jeneric.eventappfrontend.R;
 import com.jeneric.eventappfrontend.databinding.FragmentCreateBinding;
 import com.jeneric.eventappfrontend.model.EventModel;
-import com.jeneric.eventappfrontend.model.TimeConvertor;
+import com.jeneric.eventappfrontend.model.TimeWizard;
 import com.jeneric.eventappfrontend.ui.main.MainActivityViewModel;
 import com.jeneric.eventappfrontend.ui.main.MainActivity;
 
@@ -27,7 +27,7 @@ public class CreateFragment extends Fragment {
 
     private Context context;
     private EventModel event;
-    TimeConvertor timeConvertor;
+    TimeWizard timeWizard;
 
     MainActivityViewModel viewModel;
 
@@ -40,7 +40,7 @@ public class CreateFragment extends Fragment {
         super.onAttach(context);
         this.context = context;
         if (context instanceof MainActivity) {
-            this.timeConvertor = ((MainActivity) context).getTimeConvertor();
+            this.timeWizard = ((MainActivity) context).getTimeConvertor();
         }
     }
 
@@ -62,7 +62,7 @@ public class CreateFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         event = new EventModel();
-        binding.setClickHandler(new CreateFragmentClickHandlers(navController, context, event, timeConvertor, viewModel));
+        binding.setClickHandler(new CreateFragmentClickHandlers(navController, context, event, timeWizard, viewModel));
         binding.setEvent(event);
     }
 

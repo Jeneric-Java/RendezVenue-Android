@@ -44,7 +44,7 @@ public class ExploreFragment extends Fragment implements RecyclerViewInterface {
     private List<EventModel> eventList;
     private List<EventModel> filteredEventList;
     private SearchView searchView;
-//    private final String geoHashEnc = "hWYBaFlaw35f4WikCh0fMA==\n";
+
 
     private String geoHashEnc;
 

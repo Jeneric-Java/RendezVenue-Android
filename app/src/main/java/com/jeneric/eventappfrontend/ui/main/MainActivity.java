@@ -15,7 +15,7 @@ import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.jeneric.eventappfrontend.R;
 import com.jeneric.eventappfrontend.databinding.ActivityMainBinding;
-import com.jeneric.eventappfrontend.model.TimeConvertor;
+import com.jeneric.eventappfrontend.model.TimeWizard;
 import com.jeneric.eventappfrontend.service.location.utilities.LocationParser;
 import com.jeneric.eventappfrontend.ui.create.dialogues.DateTimePickerListener;
 
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements DateTimePickerLis
 
     String userLocation;
 
-    TimeConvertor timeConvertor = new TimeConvertor();
+    TimeWizard timeWizard = new TimeWizard();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,33 +90,33 @@ public class MainActivity extends AppCompatActivity implements DateTimePickerLis
 //            return false;
 //        });
 //    }
-    public TimeConvertor getTimeConvertor() {
-        return timeConvertor;
+    public TimeWizard getTimeConvertor() {
+        return timeWizard;
     }
 
     public String getUserLocation() { return userLocation;}
 
     @Override
     public void onStartDateSelected(int year, int month, int day) {
-        timeConvertor.setStartYear(year);
-        timeConvertor.setStartMonth(month);
-        timeConvertor.setStartDay(day);
+        timeWizard.setStartYear(year);
+        timeWizard.setStartMonth(month);
+        timeWizard.setStartDay(day);
 
-        timeConvertor.setEndYear(year);
-        timeConvertor.setEndMonth(month);
-        timeConvertor.setEndDay(day);
+        timeWizard.setEndYear(year);
+        timeWizard.setEndMonth(month);
+        timeWizard.setEndDay(day);
     }
 
     @Override
     public void onStartTimeSelected(int hour, int minute) {
-        timeConvertor.setStartHour(hour);
-        timeConvertor.setStartMinute(minute);
+        timeWizard.setStartHour(hour);
+        timeWizard.setStartMinute(minute);
     }
 
     @Override
     public void onEndTimeSelected(int hour, int minute) {
-        timeConvertor.setEndHour(hour);
-        timeConvertor.setEndMinute(minute);
+        timeWizard.setEndHour(hour);
+        timeWizard.setEndMinute(minute);
     }
 
     private String encryptUSL(double latitude, double longitude) throws IOException, InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, InvalidKeySpecException, BadPaddingException, InvalidKeyException {
@@ -140,17 +140,6 @@ public class MainActivity extends AppCompatActivity implements DateTimePickerLis
         IvParameterSpec ivParameterSpec = new IvParameterSpec(iv);
 
         return LocationParser.toGeoHashEnc(latitude, longitude, PSWString.substring(0, 24), PSWString.substring(25), ivParameterSpec);
-
-
-//        -------------------------------------------------------HARDCODED-------------------------------------------------------------------
-//        byte[] hardcodedIV = { INSERT_BYTES_HERE };
-//
-//        IvParameterSpec ivParameterSpec = new IvParameterSpec(hardcodedIV);
-//        SecretKey key = AESUtil.getKeyFromPassword( INSERT_PASSWORD_HERE, INSERT_SALT_HERE);
-//
-//        return LocationParser.toGeoHashEnc(latitude, INSERT_PASSWORD_HERE, INSERT_SALT_HERE, ivParameterSpec);
-//        -------------------------------------------------------HARDCODED-------------------------------------------------------------------
-
 
     }
 

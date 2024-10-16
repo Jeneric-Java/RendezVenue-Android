@@ -1,6 +1,6 @@
 package com.jeneric.eventappfrontend.model;
 
-public class TimeConvertor {
+public class TimeWizard {
 
     int startYear;
     int startMonth;
@@ -16,7 +16,7 @@ public class TimeConvertor {
     int endHour;
     int endMinute;
 
-    public TimeConvertor(int startYear, int startMonth, int startDay, int startHour, int startMinute, int endYear, int endMonth, int endDay, int endHour, int endMinute) {
+    public TimeWizard(int startYear, int startMonth, int startDay, int startHour, int startMinute, int endYear, int endMonth, int endDay, int endHour, int endMinute) {
         this.startYear = startYear;
         this.startMonth = startMonth;
         this.startDay = startDay;
@@ -29,7 +29,7 @@ public class TimeConvertor {
         this.endMinute = endMinute;
     }
 
-    public TimeConvertor() {
+    public TimeWizard() {
     }
 
     public int getStartYear() {
